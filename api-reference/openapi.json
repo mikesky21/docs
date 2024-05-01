@@ -1,195 +1,1689 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.3",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
-    "license": {
-      "name": "MIT"
-    },
-    "version": "1.0.0"
+    "title": "Fractal",
+    "version": "1.0.0",
+    "contact": {}
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
-    }
-  ],
-  "security": [
+      "url": "{{.path_root}}"
+    },
     {
-      "bearerAuth": []
+      "url": "https://testapi.fractalpay.com"
     }
   ],
   "paths": {
-    "/plants": {
-      "get": {
-        "description": "Returns all plants from the system that the user has access to",
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "The maximum number of results to return",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
+    "/api/v1/merchant/onboarding": {
+      "post": {
+        "tags": [
+          "Merchant Onboarding"
         ],
-        "responses": {
-          "200": {
-            "description": "Plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Plant"
+        "summary": "Full Merchant Submit",
+        "description": "Full Merchant Submit",
+        "operationId": "fullMerchantSubmit",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account_number": {
+                    "type": "string",
+                    "example": "091000019"
+                  },
+                  "address": {
+                    "type": "string",
+                    "example": "333 West Vine Street"
+                  },
+                  "annualCCSales": {
+                    "type": "string",
+                    "example": "500000"
+                  },
+                  "avgTicket": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "b_dl_number": {
+                    "type": "string",
+                    "example": "123123123"
+                  },
+                  "b_title": {
+                    "type": "string",
+                    "example": "Owner"
+                  },
+                  "bank_name": {
+                    "type": "string",
+                    "example": "Truist"
+                  },
+                  "beneficiary_fname": {
+                    "type": "string",
+                    "example": "Evie"
+                  },
+                  "beneficiary_lname": {
+                    "type": "string",
+                    "example": "Mann"
+                  },
+                  "business_address": {
+                    "type": "string",
+                    "example": "333 West Vine Street"
+                  },
+                  "business_city": {
+                    "type": "string",
+                    "example": "Lexington"
+                  },
+                  "business_country": {
+                    "type": "string",
+                    "example": "US"
+                  },
+                  "business_email": {
+                    "type": "string",
+                    "example": "SB1555a@fractal.com"
+                  },
+                  "business_industry": {
+                    "type": "string",
+                    "example": "7311"
+                  },
+                  "business_name": {
+                    "type": "string",
+                    "example": "testing business"
+                  },
+                  "business_phone": {
+                    "type": "string",
+                    "example": "8599779166"
+                  },
+                  "business_state": {
+                    "type": "string",
+                    "example": "Kentucky"
+                  },
+                  "business_zip": {
+                    "type": "string",
+                    "example": "40517"
+                  },
+                  "city": {
+                    "type": "string",
+                    "example": "Lexington"
+                  },
+                  "country": {
+                    "type": "string",
+                    "example": "US"
+                  },
+                  "date_of_birth": {
+                    "type": "string",
+                    "example": "1998-01-17"
+                  },
+                  "dba": {
+                    "type": "string",
+                    "example": "Software"
+                  },
+                  "ein": {
+                    "type": "string",
+                    "example": "123456789"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "SB3@fractal.com"
+                  },
+                  "established_date": {
+                    "type": "string",
+                    "example": "2024-01-01"
+                  },
+                  "first_name": {
+                    "type": "string",
+                    "example": "Evie"
+                  },
+                  "ip": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "last_name": {
+                    "type": "string",
+                    "example": "Mann"
+                  },
+                  "legal_b2b": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "legal_b2c": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "legal_cnpinternet": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "legal_cnpphoneemail": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "legal_cp": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "legal_percentdeliveredover30days": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "legal_percentdeliveredsameday": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "legal_productssold": {
+                    "type": "string",
+                    "example": "Goods"
+                  },
+                  "ownership_percent": {
+                    "type": "string",
+                    "example": "100"
+                  },
+                  "ownershiptype": {
+                    "type": "string",
+                    "example": "LLC"
+                  },
+                  "percentdelievered7days": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "percentdelivered14days": {
+                    "type": "string",
+                    "example": "50"
+                  },
+                  "phone": {
+                    "type": "string",
+                    "example": "1234567895"
+                  },
+                  "processing_environment": {
+                    "type": "string",
+                    "example": "Ecommerce"
+                  },
+                  "routing_number": {
+                    "type": "string",
+                    "example": "00212369"
+                  },
+                  "ssn": {
+                    "type": "string",
+                    "example": "555667777"
+                  },
+                  "state": {
+                    "type": "string",
+                    "example": "Kentucky"
+                  },
+                  "website": {
+                    "type": "string",
+                    "example": "https://testwebsite.com/"
+                  },
+                  "zip": {
+                    "type": "string",
+                    "example": "40507"
+                  }
+                }
+              },
+              "examples": {
+                "Full Merchant Submit": {
+                  "value": {
+                    "account_number": "091000019",
+                    "address": "333 West Vine Street",
+                    "annualCCSales": "500000",
+                    "avgTicket": "50",
+                    "b_dl_number": "123123123",
+                    "b_title": "Owner",
+                    "bank_name": "Truist",
+                    "beneficiary_fname": "Evie",
+                    "beneficiary_lname": "Mann",
+                    "business_address": "333 West Vine Street",
+                    "business_city": "Lexington",
+                    "business_country": "US",
+                    "business_email": "SB1555a@fractal.com",
+                    "business_industry": "7311",
+                    "business_name": "testing business",
+                    "business_phone": "8599779166",
+                    "business_state": "Kentucky",
+                    "business_zip": "40517",
+                    "city": "Lexington",
+                    "country": "US",
+                    "date_of_birth": "1998-01-17",
+                    "dba": "Software",
+                    "ein": "123456789",
+                    "email": "SB3@fractal.com",
+                    "established_date": "2024-01-01",
+                    "first_name": "Evie",
+                    "ip": "",
+                    "last_name": "Mann",
+                    "legal_b2b": "50",
+                    "legal_b2c": "50",
+                    "legal_cnpinternet": "50",
+                    "legal_cnpphoneemail": "50",
+                    "legal_cp": "50",
+                    "legal_percentdeliveredover30days": "50",
+                    "legal_percentdeliveredsameday": "50",
+                    "legal_productssold": "Goods",
+                    "ownership_percent": "100",
+                    "ownershiptype": "LLC",
+                    "percentdelievered7days": "50",
+                    "percentdelivered14days": "50",
+                    "phone": "1234567895",
+                    "processing_environment": "Ecommerce",
+                    "routing_number": "00212369",
+                    "ssn": "555667777",
+                    "state": "Kentucky",
+                    "website": "https://testwebsite.com/",
+                    "zip": "40507"
                   }
                 }
               }
             }
-          },
-          "400": {
-            "description": "Unexpected error",
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Full Merchant Submit",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "314"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 01 May 2024 12:59:31 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"13a-WHpdo4zbroJThzQkJ9RDWqJ2vUY\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "businessname": {
+                          "type": "string",
+                          "example": "testing business"
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "SB3@fractal.com"
+                        },
+                        "first_name": {
+                          "type": "string",
+                          "example": "Evie"
+                        },
+                        "last_name": {
+                          "type": "string",
+                          "example": "Mann"
+                        },
+                        "merchant_key": {
+                          "type": "string",
+                          "example": "19102eb7de3f5cec54e3ad620088699ff2d7e0f477aed7b33205fdd67ed306bf"
+                        },
+                        "phonenumber": {
+                          "type": "string",
+                          "example": "1234567895"
+                        },
+                        "website": {
+                          "type": "string",
+                          "example": "https://testwebsite.com/"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Merchant onboarding successfully"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Full Merchant Submit": {
+                    "value": {
+                      "data": {
+                        "businessname": "testing business",
+                        "email": "SB3@fractal.com",
+                        "first_name": "Evie",
+                        "last_name": "Mann",
+                        "merchant_key": "19102eb7de3f5cec54e3ad620088699ff2d7e0f477aed7b33205fdd67ed306bf",
+                        "phonenumber": "1234567895",
+                        "website": "https://testwebsite.com/"
+                      },
+                      "message": "Merchant onboarding successfully",
+                      "result": true
+                    }
+                  }
                 }
               }
             }
           }
-        }
-      },
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/merchant": {
+      "get": {
+        "tags": [
+          "Merchant Onboarding"
+        ],
+        "summary": "Get Merchants by Client",
+        "description": "Get Merchants by Client",
+        "operationId": "getMerchantsByClient",
+        "responses": {
+          "200": {
+            "description": "Get Merchants by Client",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "1627"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 01 May 2024 13:00:22 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"65b-p2d55CXd1q1FEW2sbeoc84eoCNo\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "businessname": {
+                            "type": "string",
+                            "example": "Fractal Demo"
+                          },
+                          "email": {
+                            "type": "string",
+                            "example": "FractalSBox@fractal.com"
+                          },
+                          "first_name": {
+                            "type": "string",
+                            "example": "Evie"
+                          },
+                          "join_date": {
+                            "type": "string",
+                            "example": "2024-04-15T01:37:57.000Z"
+                          },
+                          "last_name": {
+                            "type": "string",
+                            "example": "Mann"
+                          },
+                          "merchant_id": {
+                            "type": "string",
+                            "example": "c985b556-fac8-11ee-b78a-02fabd890500"
+                          },
+                          "phonenumber": {
+                            "type": "string",
+                            "example": "1234567895"
+                          },
+                          "website": {
+                            "type": "string",
+                            "example": "https://testwebsite.com/"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "businessname": "Fractal Demo",
+                          "email": "FractalSBox@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-15T01:37:57.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "c985b556-fac8-11ee-b78a-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB155@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-17T15:15:01.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "42d50f0a-fccd-11ee-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB1555@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-17T15:15:28.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "5313f526-fccd-11ee-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB1555b@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-17T15:15:58.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "64beb736-fccd-11ee-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB122333@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-17T16:14:45.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "9b38521e-fcd5-11ee-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB3@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-05-01T12:59:31.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "a6d207df-07ba-11ef-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        }
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Merchants fetched successfully"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Get Merchants by Client": {
+                    "value": {
+                      "data": [
+                        {
+                          "businessname": "Fractal Demo",
+                          "email": "FractalSBox@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-15T01:37:57.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "c985b556-fac8-11ee-b78a-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB155@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-17T15:15:01.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "42d50f0a-fccd-11ee-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB1555@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-17T15:15:28.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "5313f526-fccd-11ee-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB1555b@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-17T15:15:58.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "64beb736-fccd-11ee-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB122333@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-04-17T16:14:45.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "9b38521e-fcd5-11ee-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        {
+                          "businessname": "testing business",
+                          "email": "SB3@fractal.com",
+                          "first_name": "Evie",
+                          "join_date": "2024-05-01T12:59:31.000Z",
+                          "last_name": "Mann",
+                          "merchant_id": "a6d207df-07ba-11ef-aa14-02fabd890500",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        }
+                      ],
+                      "message": "Merchants fetched successfully",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/order/create": {
       "post": {
-        "description": "Creates a new plant in the store",
+        "tags": [
+          "Payment Collection Methods"
+        ],
+        "summary": "iFrame Order",
+        "description": "iFrame Order",
+        "operationId": "iframeOrder",
         "requestBody": {
-          "description": "Plant to add to the store",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Plant"
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "example": "10"
+                  },
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "72ba2f4252d5c9b2cd65f60cd698fd5ad9fe065e067281bf6c4e08cade4ee2be779969dd8c0307b8b5f1a1034335c8542400e0367a70177e64dc710e6fa57814"
+                  }
                 }
-              }
-            }
-          },
-          "400": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
+              },
+              "examples": {
+                "iFrame Order": {
+                  "value": {
+                    "amount": "10",
+                    "merchant_key": "72ba2f4252d5c9b2cd65f60cd698fd5ad9fe065e067281bf6c4e08cade4ee2be779969dd8c0307b8b5f1a1034335c8542400e0367a70177e64dc710e6fa57814"
+                  }
                 }
               }
             }
           }
-        }
+        },
+        "responses": {
+          "201": {
+            "description": "iFrame Order",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "239"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 04 Apr 2024 02:19:39 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"ef-UE0CNxR5x0ELg4heT/39OVjFOiY\""
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "payment_link": {
+                          "type": "string",
+                          "example": "http://localhost:8081/authcheck-paymentlink/95u59qv1pur"
+                        },
+                        "sales_id": {
+                          "type": "string",
+                          "example": "c9595ab3-f229-11ee-b78a-02fabd890500"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Quick Pay Order created successfully. Please check your phone for payment link."
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "iFrame Order": {
+                    "value": {
+                      "data": {
+                        "payment_link": "http://localhost:8081/authcheck-paymentlink/95u59qv1pur",
+                        "sales_id": "c9595ab3-f229-11ee-b78a-02fabd890500"
+                      },
+                      "message": "Quick Pay Order created successfully. Please check your phone for payment link.",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
       }
     },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+    "/api/v1/order/api-requestPayment": {
+      "post": {
+        "tags": [
+          "Payment Collection Methods"
+        ],
+        "summary": "Payment Request",
+        "description": "Payment Request",
+        "operationId": "paymentRequest",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "ID of plant to delete",
-            "required": true,
+            "name": "api_key",
+            "in": "header",
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string",
+              "example": "8af9a5a0e6338fbafd8d2fa7a688fd16363cc865c6e6ede3002d041c2613cb99"
             }
           }
         ],
-        "responses": {
-          "204": {
-            "description": "Plant deleted",
-            "content": {}
-          },
-          "400": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "example": "2.15"
+                  },
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "72ba2f4252d5c9b2cd65f60cd698fd5ad9fe065e067281bf6c4e08cade4ee2be779969dd8c0307b8b5f1a1034335c8542400e0367a70177e64dc710e6fa57814"
+                  },
+                  "phone_number": {
+                    "type": "string",
+                    "example": "8594685687"
+                  },
+                  "sub_merchant_key": {
+                    "type": "string",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {
+                "Payment Request": {
+                  "value": {
+                    "amount": "2.15",
+                    "merchant_key": "72ba2f4252d5c9b2cd65f60cd698fd5ad9fe065e067281bf6c4e08cade4ee2be779969dd8c0307b8b5f1a1034335c8542400e0367a70177e64dc710e6fa57814",
+                    "phone_number": "8594685687",
+                    "sub_merchant_key": ""
+                  }
                 }
               }
             }
           }
+        },
+        "responses": {
+          "201": {
+            "description": "Payment Request",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "145"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 04 Apr 2024 00:59:25 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"91-AlHAasz0cK3+1YWsUcz9Pnay7zk\""
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Text request has been sent"
+                    },
+                    "qr_code_link": {
+                      "type": "string",
+                      "example": "http://localhost:8081/authcheck-paymentlink/grrxcs2xmlp"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "status_code": {
+                      "type": "number",
+                      "example": 201
+                    }
+                  }
+                },
+                "examples": {
+                  "Payment Request": {
+                    "value": {
+                      "message": "Text request has been sent",
+                      "qr_code_link": "http://localhost:8081/authcheck-paymentlink/grrxcs2xmlp",
+                      "result": true,
+                      "status_code": 201
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/order/api-qr_code_link": {
+      "post": {
+        "tags": [
+          "Payment Collection Methods"
+        ],
+        "summary": "Payment Link",
+        "description": "Payment Link",
+        "operationId": "paymentLink",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Payment Link": {
+                  "value": "{\n    \"amount\":\"2\",\n    \"phone_number\":\"9489994444\",\n    \"merchant_key\":\"{{merchant_key}}\"\n    // \"sub_merchant_key\":\"\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Payment Link",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "139"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 01 May 2024 13:08:29 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"8b-Sh/ktR8tLp40pWut3tNKiWDemE8\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "QR code URL"
+                    },
+                    "qr_code_link": {
+                      "type": "string",
+                      "example": "https://testapi.fractalpay.com/authcheck-paymentlink/e8658gf63a4"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "status_code": {
+                      "type": "number",
+                      "example": 201
+                    }
+                  }
+                },
+                "examples": {
+                  "Payment Link": {
+                    "value": {
+                      "message": "QR code URL",
+                      "qr_code_link": "https://testapi.fractalpay.com/authcheck-paymentlink/e8658gf63a4",
+                      "result": true,
+                      "status_code": 201
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/merchant/transactions": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get Transactions",
+        "description": "Get Transactions",
+        "operationId": "getTransactions",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "from_date": {
+                    "type": "string",
+                    "example": "2024-01-15"
+                  },
+                  "limit": {
+                    "type": "string",
+                    "example": "20"
+                  },
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "{{merchant_key}}"
+                  },
+                  "pageNumber": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "to_date": {
+                    "type": "string",
+                    "example": "2024-04-18"
+                  }
+                }
+              },
+              "examples": {
+                "Get Transactions": {
+                  "value": {
+                    "from_date": "2024-01-15",
+                    "limit": "20",
+                    "merchant_key": "{{merchant_key}}",
+                    "pageNumber": 0,
+                    "to_date": "2024-04-18"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Get Transactions",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "5148"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 18 Apr 2024 16:15:23 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"141c-+V79Eq75RjVWqXe1hIsZZ0IzSIA\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "amount": {
+                            "type": "number",
+                            "example": 2250
+                          },
+                          "cutomer_email": {
+                            "nullable": true,
+                            "example": null
+                          },
+                          "cutomer_name": {
+                            "type": "string",
+                            "example": "Pete Johnson"
+                          },
+                          "discount_percentage": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "fee_percentage": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "invoice_url": {
+                            "nullable": true,
+                            "example": null
+                          },
+                          "net_amount": {
+                            "type": "number",
+                            "example": 2184.75
+                          },
+                          "other_details": {
+                            "type": "string",
+                            "example": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"V8hOy2zwH\",\"PaymentMethodId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionHistoryId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionId\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"referenceNumber\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"NetAmt\":799,\"GrossAmt\":799,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}"
+                          },
+                          "tax_percentage": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "tipAmount": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "transactionId": {
+                            "type": "string",
+                            "example": "q-2eruouJm2WiesPuihoZOw0gT8WQ"
+                          },
+                          "transaction_date": {
+                            "type": "string",
+                            "example": "2024-04-09T11:02:03.000Z"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "amount": 2250,
+                          "cutomer_email": null,
+                          "cutomer_name": "Pete Johnson",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 2184.75,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"V8hOy2zwH\",\"PaymentMethodId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionHistoryId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionId\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"referenceNumber\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"NetAmt\":799,\"GrossAmt\":799,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2eruouJm2WiesPuihoZOw0gT8WQ",
+                          "transaction_date": "2024-04-09T11:02:03.000Z"
+                        },
+                        {
+                          "amount": 2475,
+                          "cutomer_email": null,
+                          "cutomer_name": "Jim Connors",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 2403.27,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"2jMfxDr18\",\"PaymentMethodId\":\"DC4:AAA3g--imVg4ChNUGW4x-IULsD9LT_8ZYqqd0aD-qFsUf9xmpbWzyL9lF_wJvMbJu_pEJpq_xlM7igOeuX9HyplEji1dzyvVnH5MTae6gY9N_m5TyNyd0fhDggXoJONBg9sWARQpyoqeIzuGtlSAMgLW\",\"TransactionHistoryId\":\"DC4:AAA3g--imVg4ChNUGW4x-IULsD9LT_8ZYqqd0aD-qFsUf9xmpbWzyL9lF_wJvMbJu_pEJpq_xlM7igOeuX9HyplEji1dzyvVnH5MTae6gY9N_m5TyNyd0fhDggXoJONBg9sWARQpyoqeIzuGtlSAMgLW\",\"TransactionId\":\"q-2erv4MSfx6m0XvMPWMONy1CcoYx\",\"referenceNumber\":\"q-2erv4MSfx6m0XvMPWMONy1CcoYx\",\"NetAmt\":650,\"GrossAmt\":650,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2erv4MSfx6m0XvMPWMONy1CcoYx",
+                          "transaction_date": "2024-04-09T11:07:45.000Z"
+                        },
+                        {
+                          "amount": 3500,
+                          "cutomer_email": null,
+                          "cutomer_name": "Tessa Smart",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 3398.5,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"4jysw8HEby\",\"PaymentMethodId\":\"DC4:AABAjsKhz1oCBvxiKNje-tS8s4AvQFQXkfQDGxAwtN2cItBommaC41NbAKELupoF50xalPjWXqSDYi89sWlTvuNRFFlPlahB_6wCkNSGfvOzOZC9GXxVJr66PILrMkpshr2qljQxziLl0vjA4o0lxR-p\",\"TransactionHistoryId\":\"DC4:AABAjsKhz1oCBvxiKNje-tS8s4AvQFQXkfQDGxAwtN2cItBommaC41NbAKELupoF50xalPjWXqSDYi89sWlTvuNRFFlPlahB_6wCkNSGfvOzOZC9GXxVJr66PILrMkpshr2qljQxziLl0vjA4o0lxR-p\",\"TransactionId\":\"q-2ervBqwWdcAPQqsYWNY6ajygZUf\",\"referenceNumber\":\"q-2ervBqwWdcAPQqsYWNY6ajygZUf\",\"NetAmt\":699,\"GrossAmt\":699,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2ervBqwWdcAPQqsYWNY6ajygZUf",
+                          "transaction_date": "2024-04-09T11:08:52.000Z"
+                        },
+                        {
+                          "amount": 2000,
+                          "cutomer_email": null,
+                          "cutomer_name": "John Andrews",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 1942,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"1avg6wiQCZ\",\"PaymentMethodId\":\"DC4:AABCCa02rZ__gtnVJqLn9AhURMJ1-RNwhYXoEPD_74IN_KOGB623XufU91s6Keic8VygqO8hnZS2xNU09QgMLznL54Qh9Ubp5uCCJL_dCp4pcXFvk0UTb_OadpiwnPVPkqpraxA3P-78JaAC6qQg3bM7\",\"TransactionHistoryId\":\"DC4:AABCCa02rZ__gtnVJqLn9AhURMJ1-RNwhYXoEPD_74IN_KOGB623XufU91s6Keic8VygqO8hnZS2xNU09QgMLznL54Qh9Ubp5uCCJL_dCp4pcXFvk0UTb_OadpiwnPVPkqpraxA3P-78JaAC6qQg3bM7\",\"TransactionId\":\"q-2ervHlJjYxZA6B4gZGKRgLD2OPD\",\"referenceNumber\":\"q-2ervHlJjYxZA6B4gZGKRgLD2OPD\",\"NetAmt\":450,\"GrossAmt\":450,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2ervHlJjYxZA6B4gZGKRgLD2OPD",
+                          "transaction_date": "2024-04-09T11:09:50.000Z"
+                        },
+                        {
+                          "amount": 3000,
+                          "cutomer_email": null,
+                          "cutomer_name": "Samuel Logan",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 2920,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"VDhdH5BWz\",\"PaymentMethodId\":\"DC4:AAD7wGJxYYhlz5EBzNlMdaJ0etjNjIZbzIWMr8Zjpc-OAyr3Tx4QELaOeTJOjzNy55mOJi1SS7oHiHrPV_nvlQgntLY-nr5J4Lc7wiFoUW66kTI5oS1jjPbybIyB0Rp6lCroT8q84JrG1peQFbHYvEoL\",\"TransactionHistoryId\":\"DC4:AAD7wGJxYYhlz5EBzNlMdaJ0etjNjIZbzIWMr8Zjpc-OAyr3Tx4QELaOeTJOjzNy55mOJi1SS7oHiHrPV_nvlQgntLY-nr5J4Lc7wiFoUW66kTI5oS1jjPbybIyB0Rp6lCroT8q84JrG1peQFbHYvEoL\",\"TransactionId\":\"q-2f8VTmTD4mAaQJ4w6iOawjM6EMs\",\"referenceNumber\":\"q-2f8VTmTD4mAaQJ4w6iOawjM6EMs\",\"NetAmt\":100,\"GrossAmt\":100,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2f8VTmTD4mAaQJ4w6iOawjM6EMs",
+                          "transaction_date": "2024-04-15T08:01:48.000Z"
+                        }
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Transactions fetched successfully"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Get Transactions": {
+                    "value": {
+                      "data": [
+                        {
+                          "amount": 2250,
+                          "cutomer_email": null,
+                          "cutomer_name": "Pete Johnson",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 2184.75,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"V8hOy2zwH\",\"PaymentMethodId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionHistoryId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionId\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"referenceNumber\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"NetAmt\":799,\"GrossAmt\":799,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2eruouJm2WiesPuihoZOw0gT8WQ",
+                          "transaction_date": "2024-04-09T11:02:03.000Z"
+                        },
+                        {
+                          "amount": 2475,
+                          "cutomer_email": null,
+                          "cutomer_name": "Jim Connors",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 2403.27,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"2jMfxDr18\",\"PaymentMethodId\":\"DC4:AAA3g--imVg4ChNUGW4x-IULsD9LT_8ZYqqd0aD-qFsUf9xmpbWzyL9lF_wJvMbJu_pEJpq_xlM7igOeuX9HyplEji1dzyvVnH5MTae6gY9N_m5TyNyd0fhDggXoJONBg9sWARQpyoqeIzuGtlSAMgLW\",\"TransactionHistoryId\":\"DC4:AAA3g--imVg4ChNUGW4x-IULsD9LT_8ZYqqd0aD-qFsUf9xmpbWzyL9lF_wJvMbJu_pEJpq_xlM7igOeuX9HyplEji1dzyvVnH5MTae6gY9N_m5TyNyd0fhDggXoJONBg9sWARQpyoqeIzuGtlSAMgLW\",\"TransactionId\":\"q-2erv4MSfx6m0XvMPWMONy1CcoYx\",\"referenceNumber\":\"q-2erv4MSfx6m0XvMPWMONy1CcoYx\",\"NetAmt\":650,\"GrossAmt\":650,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2erv4MSfx6m0XvMPWMONy1CcoYx",
+                          "transaction_date": "2024-04-09T11:07:45.000Z"
+                        },
+                        {
+                          "amount": 3500,
+                          "cutomer_email": null,
+                          "cutomer_name": "Tessa Smart",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 3398.5,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"4jysw8HEby\",\"PaymentMethodId\":\"DC4:AABAjsKhz1oCBvxiKNje-tS8s4AvQFQXkfQDGxAwtN2cItBommaC41NbAKELupoF50xalPjWXqSDYi89sWlTvuNRFFlPlahB_6wCkNSGfvOzOZC9GXxVJr66PILrMkpshr2qljQxziLl0vjA4o0lxR-p\",\"TransactionHistoryId\":\"DC4:AABAjsKhz1oCBvxiKNje-tS8s4AvQFQXkfQDGxAwtN2cItBommaC41NbAKELupoF50xalPjWXqSDYi89sWlTvuNRFFlPlahB_6wCkNSGfvOzOZC9GXxVJr66PILrMkpshr2qljQxziLl0vjA4o0lxR-p\",\"TransactionId\":\"q-2ervBqwWdcAPQqsYWNY6ajygZUf\",\"referenceNumber\":\"q-2ervBqwWdcAPQqsYWNY6ajygZUf\",\"NetAmt\":699,\"GrossAmt\":699,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2ervBqwWdcAPQqsYWNY6ajygZUf",
+                          "transaction_date": "2024-04-09T11:08:52.000Z"
+                        },
+                        {
+                          "amount": 2000,
+                          "cutomer_email": null,
+                          "cutomer_name": "John Andrews",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 1942,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"1avg6wiQCZ\",\"PaymentMethodId\":\"DC4:AABCCa02rZ__gtnVJqLn9AhURMJ1-RNwhYXoEPD_74IN_KOGB623XufU91s6Keic8VygqO8hnZS2xNU09QgMLznL54Qh9Ubp5uCCJL_dCp4pcXFvk0UTb_OadpiwnPVPkqpraxA3P-78JaAC6qQg3bM7\",\"TransactionHistoryId\":\"DC4:AABCCa02rZ__gtnVJqLn9AhURMJ1-RNwhYXoEPD_74IN_KOGB623XufU91s6Keic8VygqO8hnZS2xNU09QgMLznL54Qh9Ubp5uCCJL_dCp4pcXFvk0UTb_OadpiwnPVPkqpraxA3P-78JaAC6qQg3bM7\",\"TransactionId\":\"q-2ervHlJjYxZA6B4gZGKRgLD2OPD\",\"referenceNumber\":\"q-2ervHlJjYxZA6B4gZGKRgLD2OPD\",\"NetAmt\":450,\"GrossAmt\":450,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2ervHlJjYxZA6B4gZGKRgLD2OPD",
+                          "transaction_date": "2024-04-09T11:09:50.000Z"
+                        },
+                        {
+                          "amount": 3000,
+                          "cutomer_email": null,
+                          "cutomer_name": "Samuel Logan",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 2920,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"VDhdH5BWz\",\"PaymentMethodId\":\"DC4:AAD7wGJxYYhlz5EBzNlMdaJ0etjNjIZbzIWMr8Zjpc-OAyr3Tx4QELaOeTJOjzNy55mOJi1SS7oHiHrPV_nvlQgntLY-nr5J4Lc7wiFoUW66kTI5oS1jjPbybIyB0Rp6lCroT8q84JrG1peQFbHYvEoL\",\"TransactionHistoryId\":\"DC4:AAD7wGJxYYhlz5EBzNlMdaJ0etjNjIZbzIWMr8Zjpc-OAyr3Tx4QELaOeTJOjzNy55mOJi1SS7oHiHrPV_nvlQgntLY-nr5J4Lc7wiFoUW66kTI5oS1jjPbybIyB0Rp6lCroT8q84JrG1peQFbHYvEoL\",\"TransactionId\":\"q-2f8VTmTD4mAaQJ4w6iOawjM6EMs\",\"referenceNumber\":\"q-2f8VTmTD4mAaQJ4w6iOawjM6EMs\",\"NetAmt\":100,\"GrossAmt\":100,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2f8VTmTD4mAaQJ4w6iOawjM6EMs",
+                          "transaction_date": "2024-04-15T08:01:48.000Z"
+                        }
+                      ],
+                      "message": "Transactions fetched successfully",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/merchant/transactions/{transaction_id}": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get Transaction",
+        "description": "Get Transaction",
+        "operationId": "getTransaction",
+        "responses": {
+          "200": {
+            "description": "Get Transaction",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "1075"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 18 Apr 2024 16:23:32 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"433-6VLMvg6daS9N6IXyKLU0yetspLo\""
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "amount": {
+                            "type": "number",
+                            "example": 2
+                          },
+                          "cutomer_email": {
+                            "nullable": true,
+                            "example": null
+                          },
+                          "cutomer_name": {
+                            "type": "string",
+                            "example": "ANDREW RICE"
+                          },
+                          "discount_percentage": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "fee_percentage": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "invoice_url": {
+                            "nullable": true,
+                            "example": null
+                          },
+                          "net_amount": {
+                            "type": "number",
+                            "example": 2
+                          },
+                          "other_details": {
+                            "type": "string",
+                            "example": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"3bCFBKB\",\"PaymentMethodId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionHistoryId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionId\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"referenceNumber\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"NetAmt\":200,\"GrossAmt\":200,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}"
+                          },
+                          "tax_percentage": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "tipAmount": {
+                            "type": "number",
+                            "example": 0
+                          },
+                          "transactionId": {
+                            "type": "string",
+                            "example": "q-2fHPNm8OtIXr4mXN1EaO7MbiICx"
+                          },
+                          "transaction_date": {
+                            "type": "string",
+                            "example": "2024-04-18T11:42:16.000Z"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "amount": 2,
+                          "cutomer_email": null,
+                          "cutomer_name": "ANDREW RICE",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 2,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"3bCFBKB\",\"PaymentMethodId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionHistoryId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionId\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"referenceNumber\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"NetAmt\":200,\"GrossAmt\":200,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2fHPNm8OtIXr4mXN1EaO7MbiICx",
+                          "transaction_date": "2024-04-18T11:42:16.000Z"
+                        }
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Transactions fetched successfully"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Get Transaction": {
+                    "value": {
+                      "data": [
+                        {
+                          "amount": 2,
+                          "cutomer_email": null,
+                          "cutomer_name": "ANDREW RICE",
+                          "discount_percentage": 0,
+                          "fee_percentage": 0,
+                          "invoice_url": null,
+                          "net_amount": 2,
+                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"3bCFBKB\",\"PaymentMethodId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionHistoryId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionId\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"referenceNumber\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"NetAmt\":200,\"GrossAmt\":200,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
+                          "tax_percentage": 0,
+                          "tipAmount": 0,
+                          "transactionId": "q-2fHPNm8OtIXr4mXN1EaO7MbiICx",
+                          "transaction_date": "2024-04-18T11:42:16.000Z"
+                        }
+                      ],
+                      "message": "Transactions fetched successfully",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "name": "transaction_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
+      ]
+    },
+    "/api/v1/order/sales-return": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Return Sale",
+        "description": "Return Sale",
+        "operationId": "returnSale",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "example": "8.00"
+                  },
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "{{merchant_key}}"
+                  },
+                  "sales_id": {
+                    "type": "string",
+                    "example": "{{sales_id}}"
+                  },
+                  "sub_merchant_key": {
+                    "type": "string",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {
+                "Return Sale": {
+                  "value": {
+                    "amount": "8.00",
+                    "merchant_key": "{{merchant_key}}",
+                    "sales_id": "{{sales_id}}",
+                    "sub_merchant_key": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/order/sales-void": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Void Sale",
+        "description": "Void Sale",
+        "operationId": "voidSale",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "{{merchant_key}}"
+                  },
+                  "sales_id": {
+                    "type": "string",
+                    "example": "{{sales_id}}"
+                  },
+                  "sub_merchant_key": {
+                    "type": "string",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {
+                "Void Sale": {
+                  "value": {
+                    "merchant_key": "{{merchant_key}}",
+                    "sales_id": "{{sales_id}}",
+                    "sub_merchant_key": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
       }
     }
   },
   "components": {
-    "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "description": "The name of the plant",
-            "type": "string"
-          },
-          "tag": {
-            "description": "Tag to specify the type",
-            "type": "string"
-          }
-        }
-      },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
-      },
-      "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "securitySchemes": {
-      "bearerAuth": {
+      "basicAuth": {
         "type": "http",
-        "scheme": "bearer"
+        "scheme": "basic"
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "Merchant Onboarding"
+    },
+    {
+      "name": "Payment Collection Methods"
+    },
+    {
+      "name": "Transactions"
+    }
+  ]
 }
