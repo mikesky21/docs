@@ -63,10 +63,15 @@
     {
       "group": "Endpoints",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete",
-        "api-reference/endpoint/Merchant Submit"
+        "api-reference/endpoint/Merchant Submit",
+        "api-reference/endpoint/Retrieve Merchants",
+        "api-reference/endpoint/Create iFrame",
+        "api-reference/endpoint/Request Payment",
+        "api-reference/endpoint/Generate Payment Link",
+        "api-reference/endpoint/Retrieve Charges",
+        "api-reference/endpoint/Retrieve Charge",
+        "api-reference/endpoint/Return Sale",
+        "api-reference/endpoint/Void Sale"
       ]
     }
   ],
