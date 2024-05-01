@@ -5,11 +5,11 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "colors": {
-    "primary": "#03C995",
-    "light": "#BCBAFF",
-    "dark": "#03C995",
+    "primary": "#61C699",
+    "light": "#F4EEFE",
+    "dark": "#61C699",
     "anchors": {
       "from": "#815AF0",
       "to": "#028d7b"
@@ -18,13 +18,9 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:support@fractal-pay.com"
     }
   ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
   "tabs": [
     {
       "name": "API Reference",
