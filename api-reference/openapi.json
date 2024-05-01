@@ -6,15 +6,13 @@
     "contact": {}
   },
   "servers": [
+
     {
-      "url": "{{.path_root}}"
-    },
-    {
-      "url": "https://testapi.fractalpay.com"
+      "url": "https://testapi.fractalpay.com/api/v1"
     }
   ],
   "paths": {
-    "/api/v1/merchant/onboarding": {
+    "/merchant/onboarding": {
       "post": {
         "tags": [
           "Merchant Onboarding"
@@ -397,7 +395,7 @@
         ]
       }
     },
-    "/api/v1/merchant": {
+    "/merchant": {
       "get": {
         "tags": [
           "Merchant Onboarding"
@@ -650,7 +648,7 @@
         ]
       }
     },
-    "/api/v1/order/create": {
+    "/order/create": {
       "post": {
         "tags": [
           "Payment Collection Methods"
@@ -783,7 +781,7 @@
         ]
       }
     },
-    "/api/v1/order/api-requestPayment": {
+    "/order/api-requestPayment": {
       "post": {
         "tags": [
           "Payment Collection Methods"
@@ -929,7 +927,7 @@
         ]
       }
     },
-    "/api/v1/order/api-qr_code_link": {
+    "/order/api-qr_code_link": {
       "post": {
         "tags": [
           "Payment Collection Methods"
@@ -1039,7 +1037,7 @@
         ]
       }
     },
-    "/api/v1/merchant/transactions": {
+    "/merchant/transactions": {
       "get": {
         "tags": [
           "Transactions"
@@ -1370,7 +1368,7 @@
         ]
       }
     },
-    "/api/v1/merchant/transactions/{transaction_id}": {
+    "/merchant/transactions/{transaction_id}": {
       "get": {
         "tags": [
           "Transactions"
@@ -1557,7 +1555,7 @@
         }
       ]
     },
-    "/api/v1/order/sales-return": {
+    "/order/sales-return": {
       "post": {
         "tags": [
           "Transactions"
@@ -1614,7 +1612,7 @@
         ]
       }
     },
-    "/api/v1/order/sales-void": {
+    "/order/sales-void": {
       "post": {
         "tags": [
           "Transactions"
