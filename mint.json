@@ -48,17 +48,17 @@
       ]
     },
     {
-      "group": "Endpoints",
+      "group": "APIs",
       "pages": [
-        "api-reference/endpoint/Merchant Submit",
-        "api-reference/endpoint/Retrieve Merchants",
-        "api-reference/endpoint/Create iFrame",
-        "api-reference/endpoint/Request Payment",
-        "api-reference/endpoint/Generate Payment Link",
-        "api-reference/endpoint/Retrieve Charges",
-        "api-reference/endpoint/Retrieve Charge",
-        "api-reference/endpoint/Return Sale",
-        "api-reference/endpoint/Void Sale"
+        "/api-reference/endpoint/Company Onboarding/Merchant Submit",
+        "/api-reference/endpoint/Company Onboarding/Retrieve Merchants",
+        "/api-reference/endpoint/Payment Collection APIs/Create iFrame",
+        "/api-reference/endpoint/Payment Collection APIs/Request Payment",
+        "api-reference/endpoint/Payment Collection APIs/Generate Payment Link",
+        "api-reference/endpoint/Transactions/Retrieve Charges",
+        "api-reference/endpoint/Transactions/Retrieve Charge",
+        "api-reference/endpoint/Transactions/Return Sale",
+        "api-reference/endpoint/Transactions/Void Sale"
       ]
     }
   ],
