@@ -1,4 +1,4 @@
-{
+{  
   "$schema": "https://mintlify.com/schema.json",
   "name": "API Documentation",
   "logo": {
@@ -7,12 +7,13 @@
   },
   "favicon": "/Favicon1.png",
   "colors": {
-    "primary": "#61C699",
-    "light": "#F4EEFE",
-    "dark": "#61C699",
-    "anchors": {
-      "from": "#815AF0",
-      "to": "#028d7b"
+    "primary": "#A66FF8",
+    "light": "#A66FF8",
+    "dark": "#35254D",
+    "anchors": "#A66FF8",
+    "background": {
+      "light": "#F7F4FA",
+      "dark": "#000000"
     }
   },
   "topbarLinks": [
