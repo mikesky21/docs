@@ -815,7 +815,7 @@
                   },
                   "phone_number": {
                     "type": "string",
-                    "example": "8594685687"
+                    "example": "5135555557"
                   },
                   "sub_merchant_key": {
                     "type": "string",
@@ -828,7 +828,7 @@
                   "value": {
                     "amount": "2.15",
                     "merchant_key": "72ba2f4252d5c9b2cd65f60cd698fd5ad9fe065e067281bf6c4e08cade4ee2be779969dd8c0307b8b5f1a1034335c8542400e0367a70177e64dc710e6fa57814",
-                    "phone_number": "8594685687",
+                    "phone_number": "5135555557",
                     "sub_merchant_key": ""
                   }
                 }

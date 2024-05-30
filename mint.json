@@ -49,6 +49,12 @@
       ]
     },
     {
+      "group": "Embedded Solutions",
+      "pages": [
+        "EmbeddedPayments"
+      ]
+    },
+    {
       "group": "Company Onboarding",
       "pages": [
         "api-reference/endpoint/Merchant Submit",
@@ -72,7 +78,6 @@
         "api-reference/endpoint/Void Sale"
       ]
     }
-    
   ],
   "footerSocials": {
     "linkedin": "https://www.linkedin.com/company/mintsearch"
