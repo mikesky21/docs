@@ -12,16 +12,16 @@ Welcome to the Widgets API documentation. This API allows you to integrate and i
 <a href="javascript:void(0);" onclick="getPaymentPage(8)" class="btn btn-primary">Pay</a>
 ```
 
-**Description**: This widget generates a button that, when clicked, opens a payment page for the widget with ID `8`.
+**Description**: This widget generates a button that, when clicked, opens a payment page for the amount `8.00`.
 
 **Parameters**:
 
-- `widget_id` (number): The ID of the widget to open the payment page for.
+- `amount` (number): The amount of the widget to open the payment page for.
 
 **Example**:
 
 ```html
-<a href="javascript:void(0);" onclick="getPaymentPage(8)" class="btn btn-primary">Pay</a>
+<a href="javascript:void(0);" onclick="getPaymentPage(8.00)" class="btn btn-primary">Pay</a>
 ```
 
 ### Request Link
@@ -29,14 +29,14 @@ Welcome to the Widgets API documentation. This API allows you to integrate and i
 **Request Payment Button**
 
 ```html
-<a href="javascript:void(0);" onclick="sendRequestPayment(8, '9695969889')" class="btn btn-primary">Request payment</a>
+<a href="javascript:void(0);" onclick="sendRequestPayment(8.00, '9695969889')" class="btn btn-primary">Request payment</a>
 ```
 
-**Description**: This widget generates a button that, when clicked, sends a payment request to the specified phone number for the widget with ID `8`.
+**Description**: This widget generates a button that, when clicked, sends a payment request to the specified phone number for the amount of `8.00`.
 
 **Parameters**:
 
-- `widget_id` (number): The ID of the widget to send the payment request for.
+- `amount` (number): The value of the widget to send the payment request for.
 - `recipient_phone` (string): The phone number of the recipient.
 
 **Example**:
@@ -47,7 +47,7 @@ Welcome to the Widgets API documentation. This API allows you to integrate and i
 
 ### Transactions Table
 
-```markdown
+
 **Transactions Table**
 
 ```html
