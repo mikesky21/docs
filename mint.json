@@ -40,7 +40,7 @@
       "group": "API Documentation",
       "pages": [
         "introduction",
-        "ImplementationGuide",
+        "implementationGuide",
         "Webhooks"
       ]
     },
