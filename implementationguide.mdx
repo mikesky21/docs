@@ -7,7 +7,7 @@ description: 'Integrations simplified'
 
 Information for partners who will integrate Fractal’s features into their apps.
 
-This guide provides partners with all information to set up, test, and launch Fractal integration as part of their application. This process includes four main phases:
+This guide provides partners with all the information to set up, test, and launch Fractal integration as part of their application. This process includes four main phases:
 
 1. [Pre-Implementation](#pre-implementation) - Work with Fractal to create a Scope of Work (SOW) describing your integration and identifying requirements across the Fractal Platform.
 2. [Sandbox Setup](#sandbox-setup) - In the Fractal Sandbox environment, you will define the settings and workflows utilized in the platform features of Fractal for your integration.
@@ -19,8 +19,6 @@ This guide provides partners with all information to set up, test, and launch Fr
 4. [Merchant Support Features](#merchant-support-features) - Enabling Fractal Merchant Support features gives your merchants the ability to manage disputes and run reports.
 
 The diagram below illustrates how the Payments Integration and Merchant Support features work together to provide the benefits of the Fractal platform:
-
-![Fractal Payment Workflow](https://example.com/images/FractalPaymentFlow.png)
 
 ---
 
@@ -59,17 +57,17 @@ Building a Scope of Work with our Prospect Platforms involves a discussion about
 
 The following steps will be required ahead of creating the SOW:
 
-1. Complete and submit the [Fractal Payments Cloud Partner Pre-Integration Form](https://example.com). (See Partner Pre-Integration Form below for assistance.) A Sales Representative will review your form and resend for your signature.
+1. Complete and submit the [Fractal Payments Cloud Partner Pre-Integration Form](https://example.com). (See Partner Pre-Integration Form below for assistance.) A Sales Representative will review your form and resend it for your signature.
 2. Sign the form and email it to Fractal Implementations at implementations@fractalpay.com.
 
 ## Fractal Contacts
 
-| Question               | Description                         |
-| ---------------------- | ----------------------------------- |
-| Sales Executive:       | Name of Sales Executive             |
-| Implementations Manager: | Name of Implementations Manager    |
-| Solutions Engineer:    | Name of Solutions Engineer          |
-| Relationship Manager:  | Name of Assigned Relationship Manager |
+| Question                  | Description                       |
+| ------------------------- | ---------------------------------- |
+| Sales Executive:          | Name of Sales Executive           |
+| Implementations Manager:  | Name of Implementations Manager    |
+| Solutions Engineer:       | Name of Solutions Engineer         |
+| Relationship Manager:     | Name of Assigned Relationship Manager |
 
 ## Partner Contacts
 
@@ -85,30 +83,30 @@ The following steps will be required ahead of creating the SOW:
 3. Select your Merchant Boarding Integration. (See the Board Integration Options table for an explanation of each option.)
 4. Click **Next**.
 
-| Boarding Integration Options | Note                                                              |
-| ----------------------------- | ----------------------------------------------------------------- |
-| Portal (manual signup)        | Clients will be boarded via the Fractal portal                    |
-| Signup Form                  | Merchants will be boarded via an online signup form.             |
-| Full API Boarding             | The Full Boarding API is a managed service allowing you to complete flexibility in the creation of a new merchant location(s). |
+| Boarding Integration Options | Note                                                                                                                         |
+| -----------------------------| ---------------------------------------------------------------------------------------------------------------------------- |
+| Portal (manual signup)       | Clients will be boarded via the Fractal portal.                                                                              |
+| Signup Form                  | Merchants will be boarded via an online signup form.                                                                         |
+| Full API Boarding            | The Full Boarding API is a managed service allowing you complete flexibility in the creation of new merchant locations.       |
 | Bulk                         | Fractal will work with you to meet the necessary technical and underwriting requirements for bulk onboarding, simplifying the process of migrating your existing Merchants to Fractal from another platform. |
-| Onboarding Webhooks             | The Full Boarding API is a managed service allowing you to complete flexibility in the creation of a new merchant location(s). |
+| Onboarding Webhooks          | The Full Boarding API is a managed service allowing you complete flexibility in the creation of new merchant locations.       |
 
 ## Payment Workflow
 
 1. Select all applicable Payment Workflow Options.
 2. Use the free form to describe your ideal payment workflow and then click **Next**.
 
-| Question                             | Note                                                                                  | Payment Methods                         |
-| ------------------------------------ | ------------------------------------------------------------------------------------- | --------------------------------------- |
+| Question                             | Note                                                                                                                           | Payment Methods                                                                                              |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | Please describe your ideal payment workflow: | **Example:** <br> - Customer visits your website, selects products, clicks "pay now". <br> - The customer enters payment information to pay for the product. <br> - Payment is approved, and the customer is given the option to save card details for future payments. <br> - The product is dispatched. | - Tokenization & Recurring Payments <br> - Direct Portal Payments & Quick Charge <br> - Bridge Payments Custom Portal <br> - Direct API Payments <br> - Card Present Payments <br> - eCommerce & Online Payments |
 
-| Payment Integration Options | Note                                                                                                                       |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Widgets                     | A suite of link and payment widgets that can be seamlessly embedded into your application.                                             |
-| Links                       | An iframe solution where the payment capture process will occur either within the iFrame or on a hosted page.                               |
-| Fractal JS                  | An embeddable JavaScript tokenizer that encrypts card data, ensuring PCI compliance for your application.                             |
-| Wallet                      | Provides merchants with a collection of card-on-file and billing-on-file solutions via API.                                         |
-| Charges Webhooks            | A feature that allows the platform to receive real-time notifications when charges are captured on our hosted solutions. |
+| Payment Integration Options | Note                                                                                                                          |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Widgets                     | A suite of link and payment widgets that can be seamlessly embedded into your application.                                     |
+| Links                       | An iframe solution where the payment capture process will occur either within the iFrame or on a hosted page.                  |
+| Fractal JS                  | An embeddable JavaScript tokenizer that encrypts card data, ensuring PCI compliance for your application.                      |
+| Wallet                      | Provides merchants with a collection of card-on-file and billing-on-file solutions via API.                                    |
+| Charges Webhooks            | A feature that allows the platform to receive real-time notifications when charges are captured on our hosted solutions.       |
 
 ## Risk and Compliance
 
@@ -117,16 +115,16 @@ The following steps will be required ahead of creating the SOW:
 1. Select all applicable Chargeback Management Options.
 2. Use the free form to describe how you currently manage your chargeback process and then click **Next**.
 
-| Question                                           | Note                                              |
-| -------------------------------------------------- | ------------------------------------------------- |
-| Portal Only                                        | Disputes are managed via the portal               |
-| API Integration (chargeback documents/responses)   | Disputes are managed by Partner/Client via API    |
+| Question                                           | Note                                                 |
+| -------------------------------------------------- | ---------------------------------------------------- |
+| Portal Only                                        | Disputes are managed via the portal                  |
+| API Integration (chargeback documents/responses)   | Disputes are managed by Partner/Client via API       |
 | How do you manage the chargeback process? Please describe below? | Provide brief descriptions. <br> **Example:** Chargebacks are managed by a third party |
 
 ## Current System
 
-| Question                                        | Note                                                              |
-| ----------------------------------------------- | ----------------------------------------------------------------- |
+| Question                                        | Note                                                                                       |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | Describe your current application and what it does: | **For example:** <br> - A B2B system facilitating payments for customers with regular fees? <br> - An eCommerce site with a shopping cart using WordPress or similar? |
 
 ## Funding
@@ -145,7 +143,7 @@ The following steps will be required ahead of creating the SOW:
 
 | Question                              | Description                         |
 | ------------------------------------- | ----------------------------------- |
-| Implementation Kick-Off Call:         | Date of first implementation call   |
+| Implementation Kick-Off Call:         | Date of the first implementation call   |
 | Anticipated Integration Target Start Date: | When do you expect to start the integration |
 | Anticipated Integration Target Finish Date: | Expected date to finalize integration |
 | Target Beta Onboarded:                | Estimated Target Beta Onboarded Date |
