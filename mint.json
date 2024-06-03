@@ -53,7 +53,8 @@
     {
       "group": "Embedded Solutions",
       "pages": [
-        "EmbeddedPayments"
+        "EmbeddedPayments",
+        "implementationguide"
       ]
     },
     {
