@@ -1,0 +1,100 @@
+# Webhook Events
+
+This page documents the various webhook events that can be triggered by the Payrix platform. Webhooks are used to notify your application when specific events occur.
+
+## Table of Contents
+
+1. [Payment Success](#payment-success)
+2. [Merchant Onboarding](#merchant-onboarding)
+3. [Merchant Approval](#merchant-approval)
+
+## Payment Success
+
+### Event: `payment.success`
+
+#### Description
+This event is triggered when a payment is successfully processed.
+
+#### Payload Example
+```json
+{
+    "event_type": "payment.success",
+    "data": {
+        "sales_id": "673129ee-216f-11ef-af4e-0ef0812e6179",
+        "merchant_id": "c985b556-fac8-11ee-b78a-02fabd890500",
+        "merchant_customer_id": 0,
+        "amount": 1.00,
+        "net_amount": 0.95,
+        "fee_percentage": 0,
+        "payment_currency": "Credit Card",
+        "created_date": "2024-06-03T06:06:22.000Z"
+    }
+}
+#### Explanation
+- `sales_id`: Unique identifier for the sale.
+- `merchant_id`: Unique identifier for the merchant.
+- `merchant_customer_id`: Identifier for the merchant's customer.
+- `amount`: Total amount of the payment.
+- `net_amount`: Amount received after fees.
+- `fee_percentage`: Percentage of the fee applied.
+- `payment_currency`: Type of currency used for payment.
+- `created_date`: Date and time when the payment was created.
+
+## Merchant Onboarding
+
+### Event: `merchant.onboarding`
+
+#### Description
+This event is triggered when a merchant completes the onboarding process.
+
+#### Payload Example
+```json
+{
+    "event_type": "merchant.onboarding",
+    "data": {
+        "merchant_key": "example-guid",
+        "businessname": "Example Business",
+        "website": "https://example.com",
+        "phonenumber": "123-456-7890",
+        "email": "merchant@example.com",
+        "first_name": "John",
+        "last_name": "Doe",
+        "public_key": "example-public-key",
+        "merchant_guid": "example-merchant-guid"
+    }
+}
+#### Explanation
+- `merchant_key`: Unique key assigned to the merchant.
+- `businessname`: Name of the merchant's business.
+- `website`: Merchant's website URL.
+- `phonenumber`: Merchant's contact phone number.
+- `email`: Merchant's contact email.
+- `first_name`: First name of the merchant contact.
+- `last_name`: Last name of the merchant contact.
+- `public_key`: Public key associated with the merchant.
+- `merchant_guid`: Unique identifier for the merchant.
+
+## Merchant Approval
+
+### Event: `merchant.approval`
+
+#### Description
+This event is triggered when a merchant's application is approved.
+
+#### Payload Example
+```json
+{
+    "event_type": "merchant.approval",
+    "data": {
+        "merchant_key": "example-guid",
+        "businessname": "Example Business",
+        "email": "merchant@example.com",
+        "public_key": "example-public-key"
+    }
+}
+
+#### Explanation
+- `merchant_key`: Unique key assigned to the merchant.
+- `businessname`: Name of the merchant's business.
+- `email`: Merchant's contact email.
+- `public_key`: Public key associated with the merchant.

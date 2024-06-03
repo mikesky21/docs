@@ -39,7 +39,9 @@
     {
       "group": "API Documentation",
       "pages": [
-        "introduction"
+        "introduction",
+        "ImplementationGuide",
+        "Webhooks"
       ]
     },
     {
