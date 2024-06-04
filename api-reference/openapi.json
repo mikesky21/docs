@@ -270,129 +270,129 @@
                 }
               }
             }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Full Merchant Submit",
-            "headers": {
-              "Access-Control-Allow-Origin": {
-                "schema": {
-                  "type": "string",
-                  "example": "*"
-                }
-              },
-              "Connection": {
-                "schema": {
-                  "type": "string",
-                  "example": "keep-alive"
-                }
-              },
-              "Content-Length": {
-                "schema": {
-                  "type": "string",
-                  "example": "314"
-                }
-              },
-              "Date": {
-                "schema": {
-                  "type": "string",
-                  "example": "Wed, 01 May 2024 12:59:31 GMT"
-                }
-              },
-              "ETag": {
-                "schema": {
-                  "type": "string",
-                  "example": "W/\"13a-WHpdo4zbroJThzQkJ9RDWqJ2vUY\""
-                }
-              },
-              "Server": {
-                "schema": {
-                  "type": "string",
-                  "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
-                }
-              },
-              "X-Powered-By": {
-                "schema": {
-                  "type": "string",
-                  "example": "Express"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "businessname": {
-                          "type": "string",
-                          "example": "testing business"
-                        },
-                        "email": {
-                          "type": "string",
-                          "example": "SB3@fractal.com"
-                        },
-                        "first_name": {
-                          "type": "string",
-                          "example": "Evie"
-                        },
-                        "last_name": {
-                          "type": "string",
-                          "example": "Mann"
-                        },
-                        "merchant_key": {
-                          "type": "string",
-                          "example": "19102eb7de3f5cec54e3ad620088699ff2d7e0f477aed7b33205fdd67ed306bf"
-                        },
-                        "phonenumber": {
-                          "type": "string",
-                          "example": "1234567895"
-                        },
-                        "website": {
-                          "type": "string",
-                          "example": "https://testwebsite.com/"
-                        }
-                      }
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "Merchant onboarding successfully"
-                    },
-                    "result": {
-                      "type": "boolean",
-                      "example": true
-                    }
+          },
+          "responses": {
+            "201": {
+              "description": "Full Merchant Submit",
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "schema": {
+                    "type": "string",
+                    "example": "*"
                   }
                 },
-                "examples": {
-                  "Full Merchant Submit": {
-                    "value": {
+                "Connection": {
+                  "schema": {
+                    "type": "string",
+                    "example": "keep-alive"
+                  }
+                },
+                "Content-Length": {
+                  "schema": {
+                    "type": "string",
+                    "example": "314"
+                  }
+                },
+                "Date": {
+                  "schema": {
+                    "type": "string",
+                    "example": "Wed, 01 May 2024 12:59:31 GMT"
+                  }
+                },
+                "ETag": {
+                  "schema": {
+                    "type": "string",
+                    "example": "W/\"13a-WHpdo4zbroJThzQkJ9RDWqJ2vUY\""
+                  }
+                },
+                "Server": {
+                  "schema": {
+                    "type": "string",
+                    "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
+                  }
+                },
+                "X-Powered-By": {
+                  "schema": {
+                    "type": "string",
+                    "example": "Express"
+                  }
+                }
+              },
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
                       "data": {
-                        "businessname": "testing business",
-                        "email": "SB3@fractal.com",
-                        "first_name": "Evie",
-                        "last_name": "Mann",
-                        "merchant_key": "19102eb7de3f5cec54e3ad620088699ff2d7e0f477aed7b33205fdd67ed306bf",
-                        "phonenumber": "1234567895",
-                        "website": "https://testwebsite.com/"
+                        "type": "object",
+                        "properties": {
+                          "businessname": {
+                            "type": "string",
+                            "example": "testing business"
+                          },
+                          "email": {
+                            "type": "string",
+                            "example": "SB3@fractal.com"
+                          },
+                          "first_name": {
+                            "type": "string",
+                            "example": "Evie"
+                          },
+                          "last_name": {
+                            "type": "string",
+                            "example": "Mann"
+                          },
+                          "merchant_key": {
+                            "type": "string",
+                            "example": "19102eb7de3f5cec54e3ad620088699ff2d7e0f477aed7b33205fdd67ed306bf"
+                          },
+                          "phonenumber": {
+                            "type": "string",
+                            "example": "1234567895"
+                          },
+                          "website": {
+                            "type": "string",
+                            "example": "https://testwebsite.com/"
+                          }
+                        }
                       },
-                      "message": "Merchant onboarding successfully",
-                      "result": true
+                      "message": {
+                        "type": "string",
+                        "example": "Merchant onboarding successfully"
+                      },
+                      "result": {
+                        "type": "boolean",
+                        "example": true
+                      }
+                    }
+                  },
+                  "examples": {
+                    "Full Merchant Submit": {
+                      "value": {
+                        "data": {
+                          "businessname": "testing business",
+                          "email": "SB3@fractal.com",
+                          "first_name": "Evie",
+                          "last_name": "Mann",
+                          "merchant_key": "19102eb7de3f5cec54e3ad620088699ff2d7e0f477aed7b33205fdd67ed306bf",
+                          "phonenumber": "1234567895",
+                          "website": "https://testwebsite.com/"
+                        },
+                        "message": "Merchant onboarding successfully",
+                        "result": true
+                      }
                     }
                   }
                 }
               }
             }
-          }
-        },
-        "security": [
-          {
-            "basicAuth": []
-          }
-        ]
+          },
+          "security": [
+            {
+              "basicAuth": []
+            }
+          ]
+        }
       }
     },
     "/merchant": {
@@ -648,14 +648,14 @@
         ]
       }
     },
-    "/order/create": {
+    "/pay-link": {
       "post": {
         "tags": [
           "Payment Collection Methods"
         ],
-        "summary": "iFrame Order",
-        "description": "iFrame Order",
-        "operationId": "iframeOrder",
+        "summary": "Create Link",
+        "description": "Create Link",
+        "operationId": "Create Link",
         "requestBody": {
           "content": {
             "application/json": {
@@ -685,7 +685,7 @@
         },
         "responses": {
           "201": {
-            "description": "iFrame Order",
+            "description": "Create Link",
             "headers": {
               "Access-Control-Allow-Origin": {
                 "schema": {
@@ -781,7 +781,7 @@
         ]
       }
     },
-    "/order/api-requestPayment": {
+    "/requests": {
       "post": {
         "tags": [
           "Payment Collection Methods"
