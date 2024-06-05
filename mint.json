@@ -40,7 +40,6 @@
       "group": "API Documentation",
       "pages": [
         "introduction",
-        "implementationguide",
         "Webhooks"
             ]
     },
@@ -53,8 +52,7 @@
     {
       "group": "Embedded Solutions",
       "pages": [
-        "EmbeddedPayments",
-        "implementationguide"
+        "EmbeddedPayments"
       ]
     },
     {
