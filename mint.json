@@ -41,9 +41,8 @@
       "pages": [
         "introduction",
         "implementationguide",
-        "Webhooks",
-        "ImplementationGuideFULL"
-      ]
+        "Webhooks"
+            ]
     },
     {
       "group": "Introduction",
