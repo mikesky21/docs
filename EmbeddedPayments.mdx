@@ -10,11 +10,12 @@ Welcome to the Widgets API documentation. This API allows you to integrate and i
 
 **Pay Button**
 
+HTML implementation
 ```html
 <a href="javascript:void(0);" onclick="getPaymentPage(8)" class="btn btn-primary">Pay</a>
 ```
 
-React/Vue js
+React/Vue js implementation
 
 ```java
 import { GetPaymentPage } from 'fractalpay';
@@ -40,11 +41,12 @@ import { GetPaymentPage } from 'fractalpay';
 
 **Request Payment Button**
 
+HTML implementation
 ```html
 <a href="javascript:void(0);" onclick="sendRequestPayment(8.00, '9695969889')" class="btn btn-primary">Request payment</a>
 ```
 
-React/Vue js
+React/Vue js implementation
 
 ```java
 import { RequestPaymentonClick } from 'fractalpay';
@@ -77,11 +79,12 @@ React/Vue js
 
 **Transactions Table**
 
+HTML implementation
 ```html
 <table id="fractal_complete_transactions" class="table"></table>
 ```
 
-React/Vue js
+React/Vue js implementation
 ```java
 import { CompletedTransactions } from 'fractalpay';
 ```
@@ -113,7 +116,7 @@ Replace `{{merchant_public_key}}` with your actual merchant public key.
 
 To use these widgets in a react/Vue.js app, install the following npm package:
 
-```html
+```java
 npm i fractal-pay-now
 ```
 
