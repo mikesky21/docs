@@ -41,7 +41,8 @@
       "pages": [
         "introduction",
         "implementationguide",
-        "Webhooks"
+        "Webhooks",
+        "EmbeddedPayments"
       ]
     },
     {
