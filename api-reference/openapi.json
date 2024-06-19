@@ -2039,7 +2039,7 @@
         ]
       }
     },
-    "/merchant/transactions/f0478a5f-fb1f-11ee-b78a-02fabd890500": {
+    "/merchant/transactions/{transactionId}": {
       "get": {
         "tags": [
           "Transactions"
@@ -2252,7 +2252,17 @@
             "basicAuth": []
           }
         ]
-      }
+      },
+      "parameters": [
+        {
+          "name": "transactionId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
     },
     "/order/sales-return": {
       "post": {
@@ -2718,7 +2728,7 @@
         },
         "responses": {
           "200": {
-            "description": "Get Customers - Drew",
+            "description": "Get Customers",
             "headers": {
               "Access-Control-Allow-Origin": {
                 "schema": {
@@ -2877,7 +2887,7 @@
                   }
                 },
                 "examples": {
-                  "Get Customers - Drew": {
+                  "Get Customers": {
                     "value": {
                       "data": [
                         {
