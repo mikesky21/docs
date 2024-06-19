@@ -2083,7 +2083,7 @@
               "Date": {
                 "schema": {
                   "type": "string",
-                  "example": "Wed, 19 Jun 2024 15:10:35 GMT"
+                  "example": "Wed, 19 Jun 2024 16:26:35 GMT"
                 }
               },
               "ETag": {
