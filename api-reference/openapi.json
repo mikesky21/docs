@@ -6,13 +6,12 @@
     "contact": {}
   },
   "servers": [
-
     {
-      "url": "https://testapi.fractalpay.com/api/v1"
+      "url": "{{.path_root}}"
     }
   ],
   "paths": {
-    "/merchant/onboarding": {
+    "/merchant-full": {
       "post": {
         "tags": [
           "Merchant Onboarding"
@@ -26,373 +25,391 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "account_number": {
-                    "type": "string",
-                    "example": "091000019"
+                  "BankingInfo": {
+                    "type": "object",
+                    "properties": {
+                      "account_number": {
+                        "type": "string",
+                        "example": "091000019"
+                      },
+                      "bank_name": {
+                        "type": "string",
+                        "example": "Bank"
+                      },
+                      "routing_number": {
+                        "type": "string",
+                        "example": "00212369"
+                      }
+                    }
                   },
-                  "address": {
-                    "type": "string",
-                    "example": "333 West Vine Street"
+                  "BusinessInfo": {
+                    "type": "object",
+                    "properties": {
+                      "business_address": {
+                        "type": "string",
+                        "example": "987 North St"
+                      },
+                      "business_city": {
+                        "type": "string",
+                        "example": "Los Angeles"
+                      },
+                      "business_country": {
+                        "type": "string",
+                        "example": "US"
+                      },
+                      "business_email": {
+                        "type": "string",
+                        "example": "contact@software.com"
+                      },
+                      "business_industry": {
+                        "type": "string",
+                        "example": "1111"
+                      },
+                      "business_name": {
+                        "type": "string",
+                        "example": "Software Company"
+                      },
+                      "business_phone": {
+                        "type": "string",
+                        "example": "9876554321"
+                      },
+                      "business_state": {
+                        "type": "string",
+                        "example": "California"
+                      },
+                      "business_zip": {
+                        "type": "string",
+                        "example": "90001"
+                      },
+                      "dba": {
+                        "type": "string",
+                        "example": "Software"
+                      },
+                      "ein": {
+                        "type": "string",
+                        "example": "987654321"
+                      },
+                      "established_date": {
+                        "type": "string",
+                        "example": "2024-01-01"
+                      },
+                      "ownershiptype": {
+                        "type": "string",
+                        "example": "LLC"
+                      },
+                      "website": {
+                        "type": "string",
+                        "example": "https://software.com/"
+                      }
+                    }
                   },
-                  "annualCCSales": {
-                    "type": "string",
-                    "example": "500000"
+                  "OwnerInfo": {
+                    "type": "object",
+                    "properties": {
+                      "address": {
+                        "type": "string",
+                        "example": "123 South St"
+                      },
+                      "b_dl_number": {
+                        "type": "string",
+                        "example": "123123123"
+                      },
+                      "b_title": {
+                        "type": "string",
+                        "example": "Owner"
+                      },
+                      "city": {
+                        "type": "string",
+                        "example": "Los Angeles"
+                      },
+                      "country": {
+                        "type": "string",
+                        "example": "US"
+                      },
+                      "date_of_birth": {
+                        "type": "string",
+                        "example": "2000-01-01"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "jimsmith@software.com"
+                      },
+                      "first_name": {
+                        "type": "string",
+                        "example": "Jim"
+                      },
+                      "last_name": {
+                        "type": "string",
+                        "example": "Smith"
+                      },
+                      "ownership_percent": {
+                        "type": "string",
+                        "example": "100"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "example": "9876654321"
+                      },
+                      "ssn": {
+                        "type": "string",
+                        "example": "123456789"
+                      },
+                      "state": {
+                        "type": "string",
+                        "example": "California"
+                      },
+                      "zip": {
+                        "type": "string",
+                        "example": "90001"
+                      }
+                    }
                   },
-                  "avgTicket": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "b_dl_number": {
-                    "type": "string",
-                    "example": "123123123"
-                  },
-                  "b_title": {
-                    "type": "string",
-                    "example": "Owner"
-                  },
-                  "bank_name": {
-                    "type": "string",
-                    "example": "Truist"
-                  },
-                  "beneficiary_fname": {
-                    "type": "string",
-                    "example": "Evie"
-                  },
-                  "beneficiary_lname": {
-                    "type": "string",
-                    "example": "Mann"
-                  },
-                  "business_address": {
-                    "type": "string",
-                    "example": "333 West Vine Street"
-                  },
-                  "business_city": {
-                    "type": "string",
-                    "example": "Lexington"
-                  },
-                  "business_country": {
-                    "type": "string",
-                    "example": "US"
-                  },
-                  "business_email": {
-                    "type": "string",
-                    "example": "SB1555a@fractal.com"
-                  },
-                  "business_industry": {
-                    "type": "string",
-                    "example": "7311"
-                  },
-                  "business_name": {
-                    "type": "string",
-                    "example": "testing business"
-                  },
-                  "business_phone": {
-                    "type": "string",
-                    "example": "8599779166"
-                  },
-                  "business_state": {
-                    "type": "string",
-                    "example": "Kentucky"
-                  },
-                  "business_zip": {
-                    "type": "string",
-                    "example": "40517"
-                  },
-                  "city": {
-                    "type": "string",
-                    "example": "Lexington"
-                  },
-                  "country": {
-                    "type": "string",
-                    "example": "US"
-                  },
-                  "date_of_birth": {
-                    "type": "string",
-                    "example": "1998-01-17"
-                  },
-                  "dba": {
-                    "type": "string",
-                    "example": "Software"
-                  },
-                  "ein": {
-                    "type": "string",
-                    "example": "123456789"
-                  },
-                  "email": {
-                    "type": "string",
-                    "example": "SB3@fractal.com"
-                  },
-                  "established_date": {
-                    "type": "string",
-                    "example": "2024-01-01"
-                  },
-                  "first_name": {
-                    "type": "string",
-                    "example": "Evie"
-                  },
-                  "ip": {
-                    "type": "string",
-                    "example": ""
-                  },
-                  "last_name": {
-                    "type": "string",
-                    "example": "Mann"
-                  },
-                  "legal_b2b": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "legal_b2c": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "legal_cnpinternet": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "legal_cnpphoneemail": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "legal_cp": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "legal_percentdeliveredover30days": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "legal_percentdeliveredsameday": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "legal_productssold": {
-                    "type": "string",
-                    "example": "Goods"
-                  },
-                  "ownership_percent": {
-                    "type": "string",
-                    "example": "100"
-                  },
-                  "ownershiptype": {
-                    "type": "string",
-                    "example": "LLC"
-                  },
-                  "percentdelievered7days": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "percentdelivered14days": {
-                    "type": "string",
-                    "example": "50"
-                  },
-                  "phone": {
-                    "type": "string",
-                    "example": "1234567895"
-                  },
-                  "processing_environment": {
-                    "type": "string",
-                    "example": "Ecommerce"
-                  },
-                  "routing_number": {
-                    "type": "string",
-                    "example": "00212369"
-                  },
-                  "ssn": {
-                    "type": "string",
-                    "example": "555667777"
-                  },
-                  "state": {
-                    "type": "string",
-                    "example": "Kentucky"
-                  },
-                  "website": {
-                    "type": "string",
-                    "example": "https://testwebsite.com/"
-                  },
-                  "zip": {
-                    "type": "string",
-                    "example": "40507"
+                  "ProcessingInfo": {
+                    "type": "object",
+                    "properties": {
+                      "annualCCSales": {
+                        "type": "string",
+                        "example": "500000"
+                      },
+                      "avgTicket": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "legal_b2b": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "legal_b2c": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "legal_cnpinternet": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "legal_cnpphoneemail": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "legal_cp": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "legal_percentdeliveredover30days": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "legal_percentdeliveredsameday": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "legal_productssold": {
+                        "type": "string",
+                        "example": "Goods"
+                      },
+                      "percentdelievered7days": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "percentdelivered14days": {
+                        "type": "string",
+                        "example": "50"
+                      },
+                      "processing_environment": {
+                        "type": "string",
+                        "example": "Ecommerce"
+                      }
+                    }
                   }
                 }
               },
               "examples": {
                 "Full Merchant Submit": {
                   "value": {
-                    "account_number": "091000019",
-                    "address": "333 West Vine Street",
-                    "annualCCSales": "500000",
-                    "avgTicket": "50",
-                    "b_dl_number": "123123123",
-                    "b_title": "Owner",
-                    "bank_name": "Truist",
-                    "beneficiary_fname": "Evie",
-                    "beneficiary_lname": "Mann",
-                    "business_address": "333 West Vine Street",
-                    "business_city": "Lexington",
-                    "business_country": "US",
-                    "business_email": "SB1555a@fractal.com",
-                    "business_industry": "7311",
-                    "business_name": "testing business",
-                    "business_phone": "8599779166",
-                    "business_state": "Kentucky",
-                    "business_zip": "40517",
-                    "city": "Lexington",
-                    "country": "US",
-                    "date_of_birth": "1998-01-17",
-                    "dba": "Software",
-                    "ein": "123456789",
-                    "email": "SB3@fractal.com",
-                    "established_date": "2024-01-01",
-                    "first_name": "Evie",
-                    "ip": "",
-                    "last_name": "Mann",
-                    "legal_b2b": "50",
-                    "legal_b2c": "50",
-                    "legal_cnpinternet": "50",
-                    "legal_cnpphoneemail": "50",
-                    "legal_cp": "50",
-                    "legal_percentdeliveredover30days": "50",
-                    "legal_percentdeliveredsameday": "50",
-                    "legal_productssold": "Goods",
-                    "ownership_percent": "100",
-                    "ownershiptype": "LLC",
-                    "percentdelievered7days": "50",
-                    "percentdelivered14days": "50",
-                    "phone": "1234567895",
-                    "processing_environment": "Ecommerce",
-                    "routing_number": "00212369",
-                    "ssn": "555667777",
-                    "state": "Kentucky",
-                    "website": "https://testwebsite.com/",
-                    "zip": "40507"
+                    "BankingInfo": {
+                      "account_number": "091000019",
+                      "bank_name": "Bank",
+                      "routing_number": "00212369"
+                    },
+                    "BusinessInfo": {
+                      "business_address": "987 North St",
+                      "business_city": "Los Angeles",
+                      "business_country": "US",
+                      "business_email": "contact@software.com",
+                      "business_industry": "1111",
+                      "business_name": "Software Company",
+                      "business_phone": "9876554321",
+                      "business_state": "California",
+                      "business_zip": "90001",
+                      "dba": "Software",
+                      "ein": "987654321",
+                      "established_date": "2024-01-01",
+                      "ownershiptype": "LLC",
+                      "website": "https://software.com/"
+                    },
+                    "OwnerInfo": {
+                      "address": "123 South St",
+                      "b_dl_number": "123123123",
+                      "b_title": "Owner",
+                      "city": "Los Angeles",
+                      "country": "US",
+                      "date_of_birth": "2000-01-01",
+                      "email": "jimsmith@software.com",
+                      "first_name": "Jim",
+                      "last_name": "Smith",
+                      "ownership_percent": "100",
+                      "phone": "9876654321",
+                      "ssn": "123456789",
+                      "state": "California",
+                      "zip": "90001"
+                    },
+                    "ProcessingInfo": {
+                      "annualCCSales": "500000",
+                      "avgTicket": "50",
+                      "legal_b2b": "50",
+                      "legal_b2c": "50",
+                      "legal_cnpinternet": "50",
+                      "legal_cnpphoneemail": "50",
+                      "legal_cp": "50",
+                      "legal_percentdeliveredover30days": "50",
+                      "legal_percentdeliveredsameday": "50",
+                      "legal_productssold": "Goods",
+                      "percentdelievered7days": "50",
+                      "percentdelivered14days": "50",
+                      "processing_environment": "Ecommerce"
+                    }
                   }
                 }
               }
             }
-          },
-          "responses": {
-            "201": {
-              "description": "Full Merchant Submit",
-              "headers": {
-                "Access-Control-Allow-Origin": {
-                  "schema": {
-                    "type": "string",
-                    "example": "*"
-                  }
-                },
-                "Connection": {
-                  "schema": {
-                    "type": "string",
-                    "example": "keep-alive"
-                  }
-                },
-                "Content-Length": {
-                  "schema": {
-                    "type": "string",
-                    "example": "314"
-                  }
-                },
-                "Date": {
-                  "schema": {
-                    "type": "string",
-                    "example": "Wed, 01 May 2024 12:59:31 GMT"
-                  }
-                },
-                "ETag": {
-                  "schema": {
-                    "type": "string",
-                    "example": "W/\"13a-WHpdo4zbroJThzQkJ9RDWqJ2vUY\""
-                  }
-                },
-                "Server": {
-                  "schema": {
-                    "type": "string",
-                    "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
-                  }
-                },
-                "X-Powered-By": {
-                  "schema": {
-                    "type": "string",
-                    "example": "Express"
-                  }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Merchant Onboarding - Drew",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
                 }
               },
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "object",
-                    "properties": {
-                      "data": {
-                        "type": "object",
-                        "properties": {
-                          "businessname": {
-                            "type": "string",
-                            "example": "testing business"
-                          },
-                          "email": {
-                            "type": "string",
-                            "example": "SB3@fractal.com"
-                          },
-                          "first_name": {
-                            "type": "string",
-                            "example": "Evie"
-                          },
-                          "last_name": {
-                            "type": "string",
-                            "example": "Mann"
-                          },
-                          "merchant_key": {
-                            "type": "string",
-                            "example": "19102eb7de3f5cec54e3ad620088699ff2d7e0f477aed7b33205fdd67ed306bf"
-                          },
-                          "phonenumber": {
-                            "type": "string",
-                            "example": "1234567895"
-                          },
-                          "website": {
-                            "type": "string",
-                            "example": "https://testwebsite.com/"
-                          }
-                        }
-                      },
-                      "message": {
-                        "type": "string",
-                        "example": "Merchant onboarding successfully"
-                      },
-                      "result": {
-                        "type": "boolean",
-                        "example": true
-                      }
-                    }
-                  },
-                  "examples": {
-                    "Full Merchant Submit": {
-                      "value": {
-                        "data": {
-                          "businessname": "testing business",
-                          "email": "SB3@fractal.com",
-                          "first_name": "Evie",
-                          "last_name": "Mann",
-                          "merchant_key": "19102eb7de3f5cec54e3ad620088699ff2d7e0f477aed7b33205fdd67ed306bf",
-                          "phonenumber": "1234567895",
-                          "website": "https://testwebsite.com/"
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "365"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 12 Jun 2024 16:45:17 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"16d-+7DTu6AAxwCbnwLhRTX/+UvJU4k\""
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "businessname": {
+                          "type": "string",
+                          "example": "Software Company"
                         },
-                        "message": "Merchant onboarding successfully",
-                        "result": true
+                        "email": {
+                          "type": "string",
+                          "example": "jimsmith@software.com"
+                        },
+                        "first_name": {
+                          "type": "string",
+                          "example": "Jim"
+                        },
+                        "last_name": {
+                          "type": "string",
+                          "example": "Smith"
+                        },
+                        "merchant_key": {
+                          "type": "string",
+                          "example": "29cd9c9a90704aa210b09d2f997255e02c57611177a510bde1368241052ac053"
+                        },
+                        "phonenumber": {
+                          "type": "string",
+                          "example": "9876654321"
+                        },
+                        "public_key": {
+                          "type": "string",
+                          "example": "8517f853282843e6a541f2019eaf7837"
+                        },
+                        "website": {
+                          "type": "string",
+                          "example": "https://software.com/"
+                        }
                       }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Merchant onboarding successfully"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Merchant Onboarding - Drew": {
+                    "value": {
+                      "data": {
+                        "businessname": "Software Company",
+                        "email": "jimsmith@software.com",
+                        "first_name": "Jim",
+                        "last_name": "Smith",
+                        "merchant_key": "29cd9c9a90704aa210b09d2f997255e02c57611177a510bde1368241052ac053",
+                        "phonenumber": "9876654321",
+                        "public_key": "8517f853282843e6a541f2019eaf7837",
+                        "website": "https://software.com/"
+                      },
+                      "message": "Merchant onboarding successfully",
+                      "result": true
                     }
                   }
                 }
               }
             }
-          },
-          "security": [
-            {
-              "basicAuth": []
-            }
-          ]
-        }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
       }
     },
     "/merchant": {
@@ -655,7 +672,7 @@
         ],
         "summary": "Create Link",
         "description": "Create Link",
-        "operationId": "Create Link",
+        "operationId": "createLink",
         "requestBody": {
           "content": {
             "application/json": {
@@ -673,7 +690,7 @@
                 }
               },
               "examples": {
-                "iFrame Order": {
+                "Create Link": {
                   "value": {
                     "amount": "10",
                     "merchant_key": "72ba2f4252d5c9b2cd65f60cd698fd5ad9fe065e067281bf6c4e08cade4ee2be779969dd8c0307b8b5f1a1034335c8542400e0367a70177e64dc710e6fa57814"
@@ -685,7 +702,7 @@
         },
         "responses": {
           "201": {
-            "description": "Create Link",
+            "description": "iFrame Order",
             "headers": {
               "Access-Control-Allow-Origin": {
                 "schema": {
@@ -815,11 +832,7 @@
                   },
                   "phone_number": {
                     "type": "string",
-                    "example": "5135555557"
-                  },
-                  "sub_merchant_key": {
-                    "type": "string",
-                    "example": ""
+                    "example": "8455456555"
                   }
                 }
               },
@@ -828,8 +841,7 @@
                   "value": {
                     "amount": "2.15",
                     "merchant_key": "72ba2f4252d5c9b2cd65f60cd698fd5ad9fe065e067281bf6c4e08cade4ee2be779969dd8c0307b8b5f1a1034335c8542400e0367a70177e64dc710e6fa57814",
-                    "phone_number": "5135555557",
-                    "sub_merchant_key": ""
+                    "phone_number": "8455456555"
                   }
                 }
               }
@@ -938,6 +950,23 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "example": "2"
+                  },
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "{{merchant_key}}"
+                  },
+                  "phone_number": {
+                    "type": "string",
+                    "example": "9489994444"
+                  }
+                }
+              },
               "examples": {
                 "Payment Link": {
                   "value": "{\n    \"amount\":\"2\",\n    \"phone_number\":\"9489994444\",\n    \"merchant_key\":\"{{merchant_key}}\"\n    // \"sub_merchant_key\":\"\"\n}"
@@ -1663,6 +1692,683 @@
           }
         ]
       }
+    },
+    "/customers/add": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Create Customer",
+        "description": "Create Customer",
+        "operationId": "createCustomer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "sally@software.com"
+                  },
+                  "first_name": {
+                    "type": "string",
+                    "example": "Sally"
+                  },
+                  "last_name": {
+                    "type": "string",
+                    "example": "Sanders"
+                  },
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "{{merchant_key}}"
+                  },
+                  "phone_number": {
+                    "type": "string",
+                    "example": "9987654321"
+                  }
+                }
+              },
+              "examples": {
+                "Create Customer": {
+                  "value": {
+                    "email": "sally@software.com",
+                    "first_name": "Sally",
+                    "last_name": "Sanders",
+                    "merchant_key": "{{merchant_key}}",
+                    "phone_number": "9987654321"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Create Customer",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "223"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 12 Jun 2024 16:58:38 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"df-U8lrbWfAD2stC3GjwEsZQ6gDqzM\""
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "CustomerId": {
+                          "type": "string",
+                          "example": "0329ed49-28dd-11ef-af4e-0ef0812e6179"
+                        },
+                        "customerEmail": {
+                          "type": "string",
+                          "example": "sally@software.com"
+                        },
+                        "customerPhone": {
+                          "type": "string",
+                          "example": "9987654321"
+                        },
+                        "firstName": {
+                          "type": "string",
+                          "example": "Sally"
+                        },
+                        "lastName": {
+                          "type": "string",
+                          "example": "Sanders"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Customer added successfully"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Create Customer": {
+                    "value": {
+                      "data": {
+                        "CustomerId": "0329ed49-28dd-11ef-af4e-0ef0812e6179",
+                        "customerEmail": "sally@software.com",
+                        "customerPhone": "9987654321",
+                        "firstName": "Sally",
+                        "lastName": "Sanders"
+                      },
+                      "message": "Customer added successfully",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/customers": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Get Customer",
+        "description": "Get Customer",
+        "operationId": "getCustomer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "{{merchant_key}}"
+                  }
+                }
+              },
+              "examples": {
+                "Get Customer": {
+                  "value": {
+                    "merchant_key": "{{merchant_key}}"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "examples": {
+                "Get Customer": {
+                  "value": "{\n    // \"amount\": 8.00,\n    \"merchant_key\":\"{{merchant_key}}\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Get Customers - Drew",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "1541"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 12 Jun 2024 16:59:01 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"605-MzeKlpvsED0PvrcLg0ZdAvYKDTY\""
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "CustomerId": {
+                            "type": "string",
+                            "example": "0329ed49-28dd-11ef-af4e-0ef0812e6179"
+                          },
+                          "Email": {
+                            "type": "string",
+                            "example": "sally@software.com"
+                          },
+                          "FirstName": {
+                            "type": "string",
+                            "example": "Sally"
+                          },
+                          "LastName": {
+                            "type": "string",
+                            "example": "Sanders"
+                          },
+                          "Phone": {
+                            "type": "string",
+                            "example": "9987654321"
+                          },
+                          "create_date": {
+                            "type": "string",
+                            "example": "2024-06-12T16:58:37.000Z"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "CustomerId": "0329ed49-28dd-11ef-af4e-0ef0812e6179",
+                          "Email": "sally@software.com",
+                          "FirstName": "Sally",
+                          "LastName": "Sanders",
+                          "Phone": "9987654321",
+                          "create_date": "2024-06-12T16:58:37.000Z"
+                        },
+                        {
+                          "CustomerId": "5b69522a-28dc-11ef-af4e-0ef0812e6179",
+                          "Email": "james@software.com",
+                          "FirstName": "James",
+                          "LastName": "Johnson",
+                          "Phone": "2234556789",
+                          "create_date": "2024-06-12T16:53:56.000Z"
+                        },
+                        {
+                          "CustomerId": "ce215376-24e4-11ef-af4e-0ef0812e6179",
+                          "Email": "mike@skysystemz.com",
+                          "FirstName": "Abccdfdfd",
+                          "LastName": "DEFcddd",
+                          "Phone": "8594685687",
+                          "create_date": "2024-06-07T15:44:20.000Z"
+                        },
+                        {
+                          "CustomerId": "c595c59a-24cd-11ef-af4e-0ef0812e6179",
+                          "Email": "de12345fddd@gmaidl.com",
+                          "FirstName": "Abccdfdfd",
+                          "LastName": "DEFcddd",
+                          "Phone": "7898789871",
+                          "create_date": "2024-06-07T12:59:27.000Z"
+                        },
+                        {
+                          "CustomerId": "c0ae5f3b-24cd-11ef-af4e-0ef0812e6179",
+                          "Email": "de12345fddd@gmail.com",
+                          "FirstName": "Abcc",
+                          "LastName": "DEFc",
+                          "Phone": "7898789873",
+                          "create_date": "2024-06-07T12:59:19.000Z"
+                        },
+                        {
+                          "CustomerId": "a8feefa8-24cd-11ef-af4e-0ef0812e6179",
+                          "Email": "de123425f@gmail.com",
+                          "FirstName": "Abc2",
+                          "LastName": "DEF",
+                          "Phone": "7898689878",
+                          "create_date": "2024-06-07T12:58:39.000Z"
+                        },
+                        {
+                          "CustomerId": "7e7abd5f-24cd-11ef-af4e-0ef0812e6179",
+                          "Email": "de12345fd@gmail.com",
+                          "FirstName": "Abcc",
+                          "LastName": "DEFc",
+                          "Phone": "7898789877",
+                          "create_date": "2024-06-07T12:57:28.000Z"
+                        },
+                        {
+                          "CustomerId": "cb08d2f3-24cc-11ef-af4e-0ef0812e6179",
+                          "Email": "de12345f@gmail.com",
+                          "FirstName": "Abc",
+                          "LastName": "DEF",
+                          "Phone": "7898789878",
+                          "create_date": "2024-06-07T12:52:27.000Z"
+                        }
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "All customer list"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Get Customers - Drew": {
+                    "value": {
+                      "data": [
+                        {
+                          "CustomerId": "0329ed49-28dd-11ef-af4e-0ef0812e6179",
+                          "Email": "sally@software.com",
+                          "FirstName": "Sally",
+                          "LastName": "Sanders",
+                          "Phone": "9987654321",
+                          "create_date": "2024-06-12T16:58:37.000Z"
+                        },
+                        {
+                          "CustomerId": "5b69522a-28dc-11ef-af4e-0ef0812e6179",
+                          "Email": "james@software.com",
+                          "FirstName": "James",
+                          "LastName": "Johnson",
+                          "Phone": "2234556789",
+                          "create_date": "2024-06-12T16:53:56.000Z"
+                        },
+                        {
+                          "CustomerId": "ce215376-24e4-11ef-af4e-0ef0812e6179",
+                          "Email": "mike@skysystemz.com",
+                          "FirstName": "Abccdfdfd",
+                          "LastName": "DEFcddd",
+                          "Phone": "8594685687",
+                          "create_date": "2024-06-07T15:44:20.000Z"
+                        },
+                        {
+                          "CustomerId": "c595c59a-24cd-11ef-af4e-0ef0812e6179",
+                          "Email": "de12345fddd@gmaidl.com",
+                          "FirstName": "Abccdfdfd",
+                          "LastName": "DEFcddd",
+                          "Phone": "7898789871",
+                          "create_date": "2024-06-07T12:59:27.000Z"
+                        },
+                        {
+                          "CustomerId": "c0ae5f3b-24cd-11ef-af4e-0ef0812e6179",
+                          "Email": "de12345fddd@gmail.com",
+                          "FirstName": "Abcc",
+                          "LastName": "DEFc",
+                          "Phone": "7898789873",
+                          "create_date": "2024-06-07T12:59:19.000Z"
+                        },
+                        {
+                          "CustomerId": "a8feefa8-24cd-11ef-af4e-0ef0812e6179",
+                          "Email": "de123425f@gmail.com",
+                          "FirstName": "Abc2",
+                          "LastName": "DEF",
+                          "Phone": "7898689878",
+                          "create_date": "2024-06-07T12:58:39.000Z"
+                        },
+                        {
+                          "CustomerId": "7e7abd5f-24cd-11ef-af4e-0ef0812e6179",
+                          "Email": "de12345fd@gmail.com",
+                          "FirstName": "Abcc",
+                          "LastName": "DEFc",
+                          "Phone": "7898789877",
+                          "create_date": "2024-06-07T12:57:28.000Z"
+                        },
+                        {
+                          "CustomerId": "cb08d2f3-24cc-11ef-af4e-0ef0812e6179",
+                          "Email": "de12345f@gmail.com",
+                          "FirstName": "Abc",
+                          "LastName": "DEF",
+                          "Phone": "7898789878",
+                          "create_date": "2024-06-07T12:52:27.000Z"
+                        }
+                      ],
+                      "message": "All customer list",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/customers/request-card/1420e829-2e34-11ef-af4e-0ef0812e6179": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Request Card",
+        "description": "Request Card",
+        "operationId": "requestCard",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "{{merchant_key}}"
+                  }
+                }
+              },
+              "examples": {
+                "Request Card": {
+                  "value": {
+                    "merchant_key": "{{merchant_key}}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Request Card-Drew",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "53"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 12 Jun 2024 16:56:04 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"35-7LYg40hm0FW0EfyITCKmrLFxc14\""
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Request sent successfully"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Request Card-Drew": {
+                    "value": {
+                      "message": "Request sent successfully",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/customers/charge/ce215376-24e4-11ef-af4e-0ef0812e6179": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Charge Customer",
+        "description": "Charge Customer",
+        "operationId": "chargeCustomer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "1bf3c6dfb288a3e7e73ea0e770ce548033d82eb849df7f3f6f2d9574eff60c83"
+                  }
+                }
+              },
+              "examples": {
+                "Charge Customer": {
+                  "value": {
+                    "amount": 1,
+                    "merchant_key": "1bf3c6dfb288a3e7e73ea0e770ce548033d82eb849df7f3f6f2d9574eff60c83"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Charge Customer",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "118"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 12:13:50 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"76-q1ErxkhYCVvHwLfSnrT34JPrF3Q\""
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Quick Payment created successfully."
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "transactionId": {
+                      "type": "string",
+                      "example": "61bab41c-2e35-11ef-af4e-0ef0812e6179"
+                    }
+                  }
+                },
+                "examples": {
+                  "Charge Customer": {
+                    "value": {
+                      "message": "Quick Payment created successfully.",
+                      "result": true,
+                      "transactionId": "61bab41c-2e35-11ef-af4e-0ef0812e6179"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -1682,6 +2388,9 @@
     },
     {
       "name": "Transactions"
+    },
+    {
+      "name": "Customers"
     }
   ]
 }
