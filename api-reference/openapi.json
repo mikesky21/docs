@@ -2690,7 +2690,7 @@
       ]
     },
     "/customers": {
-      "post": {
+      "get": {
         "tags": [
           "Customers"
         ],
