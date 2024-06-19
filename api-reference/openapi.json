@@ -2563,13 +2563,6 @@
                   }
                 }
               }
-            },
-            "text/plain": {
-              "examples": {
-                "Get Customer": {
-                  "value": "{\n    // \"amount\": 8.00,\n    \"merchant_key\":\"{{merchant_key}}\"\n}"
-                }
-              }
             }
           }
         },
