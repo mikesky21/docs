@@ -1,4 +1,4 @@
-{  
+{
   "$schema": "https://mintlify.com/schema.json",
   "name": "API Documentation",
   "logo": {
@@ -42,46 +42,43 @@
         "introduction",
         "implementationguide",
         "Webhooks"
-            ]
-    },
-    {
-      "group": "Introduction",
-      "pages": [
-        "api-reference/introduction"
       ]
     },
     {
-      "group": "Embedded Solutions",
+      "group": "Merchant Onboarding",
       "pages": [
-        "EmbeddedPayments"
+        "api-reference/merchant-onboarding/full-merchant-submit",
+        "api-reference/merchant-onboarding/get-merchants-by-client"
       ]
     },
     {
-      "group": "Company Onboarding",
+      "group": "Payment Collection Methods",
       "pages": [
-        "api-reference/endpoint/Merchant Submit",
-        "api-reference/endpoint/Retrieve Merchants"
-      ]
-    },
-    {
-      "group": "Payment Collection APIs",
-      "pages": [
-        "api-reference/endpoint/Create iFrame",
-        "api-reference/endpoint/Request Payment",
-        "api-reference/endpoint/Generate Payment Link"
+        "api-reference/payment-collection-methods/create-link",
+        "api-reference/payment-collection-methods/payment-request",
+        "api-reference/payment-collection-methods/payment-link"
       ]
     },
     {
       "group": "Transactions",
       "pages": [
-        "api-reference/endpoint/Retrieve Charges",
-        "api-reference/endpoint/Retrieve Charge",
-        "api-reference/endpoint/Return Sale",
-        "api-reference/endpoint/Void Sale"
+        "api-reference/transactions/get-transactions",
+        "api-reference/transactions/get-transaction",
+        "api-reference/transactions/return-sale",
+        "api-reference/transactions/void-sale"
+      ]
+    },
+    {
+      "group": "Customers",
+      "pages": [
+        "api-reference/customers/create-customer",
+        "api-reference/customers/get-customer",
+        "api-reference/customers/request-card",
+        "api-reference/customers/charge-customer"
       ]
     }
   ],
   "footerSocials": {
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "linkedin": "https://www.linkedin.com/company/fractalpayments/"
   }
 }
