@@ -2039,7 +2039,7 @@
         ]
       }
     },
-    "/merchant/transactions/{transactiondID}": {
+    "/merchant/transactions/{customerId}": {
       "get": {
         "tags": [
           "Transactions"
@@ -2244,7 +2244,7 @@
       },
       "parameters": [
         {
-          "name": "transactiondID",
+          "name": "customerId",
           "in": "path",
           "required": true,
           "schema": {
@@ -2525,14 +2525,156 @@
         ]
       }
     },
-    "/customers": {
-      "post": {
+    "/customers/{customerId}": {
+      "get": {
         "tags": [
           "Customers"
         ],
         "summary": "Get Customer",
         "description": "Get Customer",
         "operationId": "getCustomer",
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "examples": {
+                "Get Customer": {
+                  "value": "{\n    // \"amount\": 8.00,\n    \"merchant_key\":\"{{merchant_key}}\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Get Customer",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "198"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 19 Jun 2024 15:36:03 GMT"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"c6-/CMV1VggJu3tEXkmYA3HkjTuWYE\""
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "CustomerId": {
+                          "type": "string",
+                          "example": "0329ed49-28dd-11ef-af4e-0ef0812e6179"
+                        },
+                        "Email": {
+                          "type": "string",
+                          "example": "sally@software.com"
+                        },
+                        "First Name": {
+                          "type": "string",
+                          "example": "Sally"
+                        },
+                        "Last Name": {
+                          "type": "string",
+                          "example": "Sanders"
+                        },
+                        "Phone": {
+                          "type": "string",
+                          "example": "9987654321"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Customer details"
+                    },
+                    "result": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Get Customer": {
+                    "value": {
+                      "data": {
+                        "CustomerId": "0329ed49-28dd-11ef-af4e-0ef0812e6179",
+                        "Email": "sally@software.com",
+                        "First Name": "Sally",
+                        "Last Name": "Sanders",
+                        "Phone": "9987654321"
+                      },
+                      "message": "Customer details",
+                      "result": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "name": "customerId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/customers": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Get Customers",
+        "description": "Get Customers",
+        "operationId": "getCustomers",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2546,7 +2688,7 @@
                 }
               },
               "examples": {
-                "Get Customer": {
+                "Get Customers": {
                   "value": {
                     "merchant_key": "{{merchant_key}}"
                   }
@@ -2555,7 +2697,7 @@
             },
             "text/plain": {
               "examples": {
-                "Get Customer": {
+                "Get Customers": {
                   "value": "{\n    // \"amount\": 8.00,\n    \"merchant_key\":\"{{merchant_key}}\"\n}"
                 }
               }
@@ -2807,7 +2949,7 @@
         ]
       }
     },
-    "/customers/request-card/1420e829-2e34-11ef-af4e-0ef0812e6179": {
+    "/customers/request-card/{customerId}": {
       "post": {
         "tags": [
           "Customers"
@@ -2916,9 +3058,19 @@
             "basicAuth": []
           }
         ]
-      }
+      },
+      "parameters": [
+        {
+          "name": "customerId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
     },
-    "/customers/charge/ce215376-24e4-11ef-af4e-0ef0812e6179": {
+    "/customers/charge/{customerId}": {
       "post": {
         "tags": [
           "Customers"
@@ -2926,6 +3078,24 @@
         "summary": "Charge Customer",
         "description": "Charge Customer",
         "operationId": "chargeCustomer",
+        "parameters": [
+          {
+            "name": "",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": ""
+            }
+          },
+          {
+            "name": "",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "9ee4a08a-2e34-11ef-af4e-0ef0812e6179"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -3037,7 +3207,17 @@
             "basicAuth": []
           }
         ]
-      }
+      },
+      "parameters": [
+        {
+          "name": "customerId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
     }
   },
   "components": {
