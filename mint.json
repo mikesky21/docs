@@ -73,6 +73,7 @@
       "pages": [
         "api-reference/customers/create-customer",
         "api-reference/customers/get-customer",
+        "api-reference/customers/get-customers",
         "api-reference/customers/request-card",
         "api-reference/customers/charge-customer"
       ]
