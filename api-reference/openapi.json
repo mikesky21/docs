@@ -1098,7 +1098,7 @@
                   },
                   "to_date": {
                     "type": "string",
-                    "example": "2024-04-18"
+                    "example": "2024-06-18"
                   }
                 }
               },
@@ -1109,7 +1109,7 @@
                     "limit": "20",
                     "merchant_key": "{{merchant_key}}",
                     "pageNumber": 0,
-                    "to_date": "2024-04-18"
+                    "to_date": "2024-06-18"
                   }
                 }
               }
@@ -1135,25 +1135,25 @@
               "Content-Length": {
                 "schema": {
                   "type": "string",
-                  "example": "5148"
+                  "example": "9082"
                 }
               },
               "Date": {
                 "schema": {
                   "type": "string",
-                  "example": "Thu, 18 Apr 2024 16:15:23 GMT"
+                  "example": "Wed, 19 Jun 2024 15:11:09 GMT"
                 }
               },
               "ETag": {
                 "schema": {
                   "type": "string",
-                  "example": "W/\"141c-+V79Eq75RjVWqXe1hIsZZ0IzSIA\""
+                  "example": "W/\"237a-ZZaJJ8akZ+9wRVPRj3cHKwUKagY\""
                 }
               },
-              "Server": {
+              "Keep-Alive": {
                 "schema": {
                   "type": "string",
-                  "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
+                  "example": "timeout=5"
                 }
               },
               "X-Powered-By": {
@@ -1174,8 +1174,8 @@
                         "type": "object",
                         "properties": {
                           "amount": {
-                            "type": "number",
-                            "example": 2250
+                            "type": "string",
+                            "example": "10.00"
                           },
                           "cutomer_email": {
                             "nullable": true,
@@ -1183,15 +1183,15 @@
                           },
                           "cutomer_name": {
                             "type": "string",
-                            "example": "Pete Johnson"
+                            "example": "John Doe"
                           },
                           "discount_percentage": {
-                            "type": "number",
-                            "example": 0
+                            "type": "string",
+                            "example": "0.0000000"
                           },
                           "fee_percentage": {
-                            "type": "number",
-                            "example": 0
+                            "type": "string",
+                            "example": "0.0000000"
                           },
                           "invoice_url": {
                             "nullable": true,
@@ -1199,110 +1199,441 @@
                           },
                           "net_amount": {
                             "type": "number",
-                            "example": 2184.75
+                            "example": 10
                           },
                           "other_details": {
+                            "type": "object",
+                            "properties": {
+                              "authcode": {
+                                "type": "string",
+                                "example": "OqYaaFWI5"
+                              },
+                              "cardType": {
+                                "type": "string",
+                                "example": "VISA"
+                              },
+                              "lastFourDigits": {
+                                "type": "string",
+                                "example": "0043"
+                              }
+                            }
+                          },
+                          "paymentTransactionId": {
                             "type": "string",
-                            "example": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"V8hOy2zwH\",\"PaymentMethodId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionHistoryId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionId\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"referenceNumber\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"NetAmt\":799,\"GrossAmt\":799,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}"
+                            "example": "q-2i19Zz1hFNzprmtcMxo7dBOhXnu"
                           },
                           "tax_percentage": {
-                            "type": "number",
-                            "example": 0
+                            "type": "string",
+                            "example": "0.0000000"
                           },
                           "tipAmount": {
-                            "type": "number",
-                            "example": 0
+                            "type": "string",
+                            "example": "0.00"
                           },
                           "transactionId": {
                             "type": "string",
-                            "example": "q-2eruouJm2WiesPuihoZOw0gT8WQ"
+                            "example": "72d3da57-2cd3-11ef-af4e-0ef0812e6179"
                           },
                           "transaction_date": {
                             "type": "string",
-                            "example": "2024-04-09T11:02:03.000Z"
+                            "example": "2024-06-17T18:00:14.000Z"
                           }
                         }
                       },
                       "example": [
                         {
-                          "amount": 2250,
+                          "amount": "10.00",
                           "cutomer_email": null,
-                          "cutomer_name": "Pete Johnson",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 2184.75,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"V8hOy2zwH\",\"PaymentMethodId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionHistoryId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionId\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"referenceNumber\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"NetAmt\":799,\"GrossAmt\":799,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2eruouJm2WiesPuihoZOw0gT8WQ",
-                          "transaction_date": "2024-04-09T11:02:03.000Z"
+                          "net_amount": 10,
+                          "other_details": {
+                            "authcode": "OqYaaFWI5",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2i19Zz1hFNzprmtcMxo7dBOhXnu",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "72d3da57-2cd3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-17T18:00:14.000Z"
                         },
                         {
-                          "amount": 2475,
+                          "amount": "10.00",
                           "cutomer_email": null,
-                          "cutomer_name": "Jim Connors",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 2403.27,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"2jMfxDr18\",\"PaymentMethodId\":\"DC4:AAA3g--imVg4ChNUGW4x-IULsD9LT_8ZYqqd0aD-qFsUf9xmpbWzyL9lF_wJvMbJu_pEJpq_xlM7igOeuX9HyplEji1dzyvVnH5MTae6gY9N_m5TyNyd0fhDggXoJONBg9sWARQpyoqeIzuGtlSAMgLW\",\"TransactionHistoryId\":\"DC4:AAA3g--imVg4ChNUGW4x-IULsD9LT_8ZYqqd0aD-qFsUf9xmpbWzyL9lF_wJvMbJu_pEJpq_xlM7igOeuX9HyplEji1dzyvVnH5MTae6gY9N_m5TyNyd0fhDggXoJONBg9sWARQpyoqeIzuGtlSAMgLW\",\"TransactionId\":\"q-2erv4MSfx6m0XvMPWMONy1CcoYx\",\"referenceNumber\":\"q-2erv4MSfx6m0XvMPWMONy1CcoYx\",\"NetAmt\":650,\"GrossAmt\":650,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2erv4MSfx6m0XvMPWMONy1CcoYx",
-                          "transaction_date": "2024-04-09T11:07:45.000Z"
+                          "net_amount": 10,
+                          "other_details": {
+                            "authcode": "fMEGP4fb",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2i18WSf9S2S8rJWCEHhUrMqeuG1",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "186c8b6d-2cd2-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-17T17:50:33.000Z"
                         },
                         {
-                          "amount": 3500,
+                          "amount": "1.00",
                           "cutomer_email": null,
-                          "cutomer_name": "Tessa Smart",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "undefined undefined",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 3398.5,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"4jysw8HEby\",\"PaymentMethodId\":\"DC4:AABAjsKhz1oCBvxiKNje-tS8s4AvQFQXkfQDGxAwtN2cItBommaC41NbAKELupoF50xalPjWXqSDYi89sWlTvuNRFFlPlahB_6wCkNSGfvOzOZC9GXxVJr66PILrMkpshr2qljQxziLl0vjA4o0lxR-p\",\"TransactionHistoryId\":\"DC4:AABAjsKhz1oCBvxiKNje-tS8s4AvQFQXkfQDGxAwtN2cItBommaC41NbAKELupoF50xalPjWXqSDYi89sWlTvuNRFFlPlahB_6wCkNSGfvOzOZC9GXxVJr66PILrMkpshr2qljQxziLl0vjA4o0lxR-p\",\"TransactionId\":\"q-2ervBqwWdcAPQqsYWNY6ajygZUf\",\"referenceNumber\":\"q-2ervBqwWdcAPQqsYWNY6ajygZUf\",\"NetAmt\":699,\"GrossAmt\":699,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2ervBqwWdcAPQqsYWNY6ajygZUf",
-                          "transaction_date": "2024-04-09T11:08:52.000Z"
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "SDIWqBlAY",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hvOXACeBJnYWyyhHLM0GXaWGpZ",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "7229d5c0-2b39-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-15T17:05:20.000Z"
                         },
                         {
-                          "amount": 2000,
+                          "amount": "1.00",
                           "cutomer_email": null,
-                          "cutomer_name": "John Andrews",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "undefined undefined",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 1942,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"1avg6wiQCZ\",\"PaymentMethodId\":\"DC4:AABCCa02rZ__gtnVJqLn9AhURMJ1-RNwhYXoEPD_74IN_KOGB623XufU91s6Keic8VygqO8hnZS2xNU09QgMLznL54Qh9Ubp5uCCJL_dCp4pcXFvk0UTb_OadpiwnPVPkqpraxA3P-78JaAC6qQg3bM7\",\"TransactionHistoryId\":\"DC4:AABCCa02rZ__gtnVJqLn9AhURMJ1-RNwhYXoEPD_74IN_KOGB623XufU91s6Keic8VygqO8hnZS2xNU09QgMLznL54Qh9Ubp5uCCJL_dCp4pcXFvk0UTb_OadpiwnPVPkqpraxA3P-78JaAC6qQg3bM7\",\"TransactionId\":\"q-2ervHlJjYxZA6B4gZGKRgLD2OPD\",\"referenceNumber\":\"q-2ervHlJjYxZA6B4gZGKRgLD2OPD\",\"NetAmt\":450,\"GrossAmt\":450,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2ervHlJjYxZA6B4gZGKRgLD2OPD",
-                          "transaction_date": "2024-04-09T11:09:50.000Z"
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "sdEXUqYP",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hvOH9XpGHcwGNIcs0Nb9yaRrZp",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "26369d24-2b39-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-15T17:03:12.000Z"
                         },
                         {
-                          "amount": 3000,
+                          "amount": "3.00",
                           "cutomer_email": null,
-                          "cutomer_name": "Samuel Logan",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 2920,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"VDhdH5BWz\",\"PaymentMethodId\":\"DC4:AAD7wGJxYYhlz5EBzNlMdaJ0etjNjIZbzIWMr8Zjpc-OAyr3Tx4QELaOeTJOjzNy55mOJi1SS7oHiHrPV_nvlQgntLY-nr5J4Lc7wiFoUW66kTI5oS1jjPbybIyB0Rp6lCroT8q84JrG1peQFbHYvEoL\",\"TransactionHistoryId\":\"DC4:AAD7wGJxYYhlz5EBzNlMdaJ0etjNjIZbzIWMr8Zjpc-OAyr3Tx4QELaOeTJOjzNy55mOJi1SS7oHiHrPV_nvlQgntLY-nr5J4Lc7wiFoUW66kTI5oS1jjPbybIyB0Rp6lCroT8q84JrG1peQFbHYvEoL\",\"TransactionId\":\"q-2f8VTmTD4mAaQJ4w6iOawjM6EMs\",\"referenceNumber\":\"q-2f8VTmTD4mAaQJ4w6iOawjM6EMs\",\"NetAmt\":100,\"GrossAmt\":100,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2f8VTmTD4mAaQJ4w6iOawjM6EMs",
-                          "transaction_date": "2024-04-15T08:01:48.000Z"
+                          "net_amount": 3,
+                          "other_details": {
+                            "authcode": "5hxxyb3X5E",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hsZrCJN30woLT6aWZGeOUtzM7p",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "bef5c47d-2a70-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T17:08:40.000Z"
+                        },
+                        {
+                          "amount": "8.11",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 8.11,
+                          "other_details": {
+                            "authcode": "PsenPqlD",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hsZcpQT54dzjfpXW8ydYVvFrTv",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "7b86ed26-2a70-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T17:06:46.000Z"
+                        },
+                        {
+                          "amount": "10.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 10,
+                          "other_details": {
+                            "authcode": "vhTS7u6lXx",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hsGX8e04CQDgAm1JA6AUPFihAJ",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "87c81353-2a5a-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T14:29:38.000Z"
+                        },
+                        {
+                          "amount": "10.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 10,
+                          "other_details": {
+                            "authcode": "ZJwF5mce4L",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hs9PHMFojVRoxkBlygXsKkQExY",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "5eeb4ff1-2a52-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T13:31:13.000Z"
+                        },
+                        {
+                          "amount": "2.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 2,
+                          "other_details": {
+                            "authcode": "vcinLD3XMA",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hs8eq1A81yQEMyLyW6FJBJdoaY",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "7b3e58da-2a51-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T13:24:52.000Z"
+                        },
+                        {
+                          "amount": "2.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 2,
+                          "other_details": {
+                            "authcode": "71kQGCa",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hp4wDNpWcHK4On4GNHpDiiOpXj",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "94e4dd68-2977-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-13T11:25:04.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "R6KC2zOL",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hp1Q7wCBJ4mRSXh0jvQENzhPxC",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "896de183-2973-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-13T10:56:07.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "KEOhjBu9",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2houx0CG9vw97bsJuQThtAjXTdA",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "00453270-296c-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-13T10:02:10.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "xRPiCLaFhy",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2houUeZ1VDJVsgRkyKtdnOyKSyP",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "438e9854-296b-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-13T09:56:54.000Z"
+                        },
+                        {
+                          "amount": "2.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 2,
+                          "other_details": {
+                            "authcode": "LHMz0iP",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hYctxCu9GHVAR9tB0C5a2vp3p1",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "d7034feb-24e3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-07T15:37:25.000Z"
+                        },
+                        {
+                          "amount": "4.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 4,
+                          "other_details": {
+                            "authcode": "aEFyNMuT",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hYciTE0GfxxYaKMn36E2bB4Fwv",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "a0af9ad8-24e3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-07T15:35:54.000Z"
+                        },
+                        {
+                          "amount": "4.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 4,
+                          "other_details": {
+                            "authcode": "IMOfV0Pvzn",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hYcXS6a7oV92truJLwhqEnfjTz",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "7611d137-24e3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-07T15:34:42.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "lXGFC6Isc",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hWMv1VJ1veuRtkWnK7GcKuX9wn",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "0cfa3430-2443-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-06T20:26:27.000Z"
+                        },
+                        {
+                          "amount": "5.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 5,
+                          "other_details": {
+                            "authcode": "Vh2f9kEuss",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hQl7jrbm9oEkL6ZxTfT4lOxYgx",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "9087deba-22b3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-04T20:46:49.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "Q2bCe3rJjl",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hMCvygtASweOVm1fRydn01nI5B",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "673129ee-216f-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-03T06:06:22.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "3S9YxBiyi",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hK73U6XLaI3Z2WuD1DtVTlu58I",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "378700eb-20da-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-02T12:18:27.000Z"
                         }
                       ]
                     },
                     "message": {
                       "type": "string",
-                      "example": "Transactions fetched successfully"
+                      "example": "Merchant's Transactions"
                     },
                     "result": {
                       "type": "boolean",
                       "example": true
+                    },
+                    "total": {
+                      "type": "number",
+                      "example": 49
                     }
                   }
                 },
@@ -1311,78 +1642,389 @@
                     "value": {
                       "data": [
                         {
-                          "amount": 2250,
+                          "amount": "10.00",
                           "cutomer_email": null,
-                          "cutomer_name": "Pete Johnson",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 2184.75,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"V8hOy2zwH\",\"PaymentMethodId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionHistoryId\":\"DC4:AACqZk1dQjLuTQP1_Ujoi8NfFCpVo-kiRg6ty7VrV-CUeBtU89o34oC7TOywrLC3a9kVt9USlLPvr79uB12gJkuv3IqA8Nnp93EmsCybFHfzqR_Ozkw-0FJnbIrziWKkKJH0HdY38rDy40Qib1coXaju\",\"TransactionId\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"referenceNumber\":\"q-2eruouJm2WiesPuihoZOw0gT8WQ\",\"NetAmt\":799,\"GrossAmt\":799,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2eruouJm2WiesPuihoZOw0gT8WQ",
-                          "transaction_date": "2024-04-09T11:02:03.000Z"
+                          "net_amount": 10,
+                          "other_details": {
+                            "authcode": "OqYaaFWI5",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2i19Zz1hFNzprmtcMxo7dBOhXnu",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "72d3da57-2cd3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-17T18:00:14.000Z"
                         },
                         {
-                          "amount": 2475,
+                          "amount": "10.00",
                           "cutomer_email": null,
-                          "cutomer_name": "Jim Connors",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 2403.27,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"2jMfxDr18\",\"PaymentMethodId\":\"DC4:AAA3g--imVg4ChNUGW4x-IULsD9LT_8ZYqqd0aD-qFsUf9xmpbWzyL9lF_wJvMbJu_pEJpq_xlM7igOeuX9HyplEji1dzyvVnH5MTae6gY9N_m5TyNyd0fhDggXoJONBg9sWARQpyoqeIzuGtlSAMgLW\",\"TransactionHistoryId\":\"DC4:AAA3g--imVg4ChNUGW4x-IULsD9LT_8ZYqqd0aD-qFsUf9xmpbWzyL9lF_wJvMbJu_pEJpq_xlM7igOeuX9HyplEji1dzyvVnH5MTae6gY9N_m5TyNyd0fhDggXoJONBg9sWARQpyoqeIzuGtlSAMgLW\",\"TransactionId\":\"q-2erv4MSfx6m0XvMPWMONy1CcoYx\",\"referenceNumber\":\"q-2erv4MSfx6m0XvMPWMONy1CcoYx\",\"NetAmt\":650,\"GrossAmt\":650,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2erv4MSfx6m0XvMPWMONy1CcoYx",
-                          "transaction_date": "2024-04-09T11:07:45.000Z"
+                          "net_amount": 10,
+                          "other_details": {
+                            "authcode": "fMEGP4fb",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2i18WSf9S2S8rJWCEHhUrMqeuG1",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "186c8b6d-2cd2-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-17T17:50:33.000Z"
                         },
                         {
-                          "amount": 3500,
+                          "amount": "1.00",
                           "cutomer_email": null,
-                          "cutomer_name": "Tessa Smart",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "undefined undefined",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 3398.5,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"4jysw8HEby\",\"PaymentMethodId\":\"DC4:AABAjsKhz1oCBvxiKNje-tS8s4AvQFQXkfQDGxAwtN2cItBommaC41NbAKELupoF50xalPjWXqSDYi89sWlTvuNRFFlPlahB_6wCkNSGfvOzOZC9GXxVJr66PILrMkpshr2qljQxziLl0vjA4o0lxR-p\",\"TransactionHistoryId\":\"DC4:AABAjsKhz1oCBvxiKNje-tS8s4AvQFQXkfQDGxAwtN2cItBommaC41NbAKELupoF50xalPjWXqSDYi89sWlTvuNRFFlPlahB_6wCkNSGfvOzOZC9GXxVJr66PILrMkpshr2qljQxziLl0vjA4o0lxR-p\",\"TransactionId\":\"q-2ervBqwWdcAPQqsYWNY6ajygZUf\",\"referenceNumber\":\"q-2ervBqwWdcAPQqsYWNY6ajygZUf\",\"NetAmt\":699,\"GrossAmt\":699,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2ervBqwWdcAPQqsYWNY6ajygZUf",
-                          "transaction_date": "2024-04-09T11:08:52.000Z"
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "SDIWqBlAY",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hvOXACeBJnYWyyhHLM0GXaWGpZ",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "7229d5c0-2b39-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-15T17:05:20.000Z"
                         },
                         {
-                          "amount": 2000,
+                          "amount": "1.00",
                           "cutomer_email": null,
-                          "cutomer_name": "John Andrews",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "undefined undefined",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 1942,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"1avg6wiQCZ\",\"PaymentMethodId\":\"DC4:AABCCa02rZ__gtnVJqLn9AhURMJ1-RNwhYXoEPD_74IN_KOGB623XufU91s6Keic8VygqO8hnZS2xNU09QgMLznL54Qh9Ubp5uCCJL_dCp4pcXFvk0UTb_OadpiwnPVPkqpraxA3P-78JaAC6qQg3bM7\",\"TransactionHistoryId\":\"DC4:AABCCa02rZ__gtnVJqLn9AhURMJ1-RNwhYXoEPD_74IN_KOGB623XufU91s6Keic8VygqO8hnZS2xNU09QgMLznL54Qh9Ubp5uCCJL_dCp4pcXFvk0UTb_OadpiwnPVPkqpraxA3P-78JaAC6qQg3bM7\",\"TransactionId\":\"q-2ervHlJjYxZA6B4gZGKRgLD2OPD\",\"referenceNumber\":\"q-2ervHlJjYxZA6B4gZGKRgLD2OPD\",\"NetAmt\":450,\"GrossAmt\":450,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2ervHlJjYxZA6B4gZGKRgLD2OPD",
-                          "transaction_date": "2024-04-09T11:09:50.000Z"
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "sdEXUqYP",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hvOH9XpGHcwGNIcs0Nb9yaRrZp",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "26369d24-2b39-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-15T17:03:12.000Z"
                         },
                         {
-                          "amount": 3000,
+                          "amount": "3.00",
                           "cutomer_email": null,
-                          "cutomer_name": "Samuel Logan",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 2920,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"VDhdH5BWz\",\"PaymentMethodId\":\"DC4:AAD7wGJxYYhlz5EBzNlMdaJ0etjNjIZbzIWMr8Zjpc-OAyr3Tx4QELaOeTJOjzNy55mOJi1SS7oHiHrPV_nvlQgntLY-nr5J4Lc7wiFoUW66kTI5oS1jjPbybIyB0Rp6lCroT8q84JrG1peQFbHYvEoL\",\"TransactionHistoryId\":\"DC4:AAD7wGJxYYhlz5EBzNlMdaJ0etjNjIZbzIWMr8Zjpc-OAyr3Tx4QELaOeTJOjzNy55mOJi1SS7oHiHrPV_nvlQgntLY-nr5J4Lc7wiFoUW66kTI5oS1jjPbybIyB0Rp6lCroT8q84JrG1peQFbHYvEoL\",\"TransactionId\":\"q-2f8VTmTD4mAaQJ4w6iOawjM6EMs\",\"referenceNumber\":\"q-2f8VTmTD4mAaQJ4w6iOawjM6EMs\",\"NetAmt\":100,\"GrossAmt\":100,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2f8VTmTD4mAaQJ4w6iOawjM6EMs",
-                          "transaction_date": "2024-04-15T08:01:48.000Z"
+                          "net_amount": 3,
+                          "other_details": {
+                            "authcode": "5hxxyb3X5E",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hsZrCJN30woLT6aWZGeOUtzM7p",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "bef5c47d-2a70-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T17:08:40.000Z"
+                        },
+                        {
+                          "amount": "8.11",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 8.11,
+                          "other_details": {
+                            "authcode": "PsenPqlD",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hsZcpQT54dzjfpXW8ydYVvFrTv",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "7b86ed26-2a70-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T17:06:46.000Z"
+                        },
+                        {
+                          "amount": "10.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 10,
+                          "other_details": {
+                            "authcode": "vhTS7u6lXx",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hsGX8e04CQDgAm1JA6AUPFihAJ",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "87c81353-2a5a-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T14:29:38.000Z"
+                        },
+                        {
+                          "amount": "10.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 10,
+                          "other_details": {
+                            "authcode": "ZJwF5mce4L",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hs9PHMFojVRoxkBlygXsKkQExY",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "5eeb4ff1-2a52-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T13:31:13.000Z"
+                        },
+                        {
+                          "amount": "2.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 2,
+                          "other_details": {
+                            "authcode": "vcinLD3XMA",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hs8eq1A81yQEMyLyW6FJBJdoaY",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "7b3e58da-2a51-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-14T13:24:52.000Z"
+                        },
+                        {
+                          "amount": "2.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 2,
+                          "other_details": {
+                            "authcode": "71kQGCa",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hp4wDNpWcHK4On4GNHpDiiOpXj",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "94e4dd68-2977-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-13T11:25:04.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "R6KC2zOL",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hp1Q7wCBJ4mRSXh0jvQENzhPxC",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "896de183-2973-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-13T10:56:07.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "KEOhjBu9",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2houx0CG9vw97bsJuQThtAjXTdA",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "00453270-296c-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-13T10:02:10.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "xRPiCLaFhy",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2houUeZ1VDJVsgRkyKtdnOyKSyP",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "438e9854-296b-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-13T09:56:54.000Z"
+                        },
+                        {
+                          "amount": "2.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 2,
+                          "other_details": {
+                            "authcode": "LHMz0iP",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hYctxCu9GHVAR9tB0C5a2vp3p1",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "d7034feb-24e3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-07T15:37:25.000Z"
+                        },
+                        {
+                          "amount": "4.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 4,
+                          "other_details": {
+                            "authcode": "aEFyNMuT",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hYciTE0GfxxYaKMn36E2bB4Fwv",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "a0af9ad8-24e3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-07T15:35:54.000Z"
+                        },
+                        {
+                          "amount": "4.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 4,
+                          "other_details": {
+                            "authcode": "IMOfV0Pvzn",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hYcXS6a7oV92truJLwhqEnfjTz",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "7611d137-24e3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-07T15:34:42.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "lXGFC6Isc",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hWMv1VJ1veuRtkWnK7GcKuX9wn",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "0cfa3430-2443-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-06T20:26:27.000Z"
+                        },
+                        {
+                          "amount": "5.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 5,
+                          "other_details": {
+                            "authcode": "Vh2f9kEuss",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hQl7jrbm9oEkL6ZxTfT4lOxYgx",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "9087deba-22b3-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-04T20:46:49.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "Q2bCe3rJjl",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hMCvygtASweOVm1fRydn01nI5B",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "673129ee-216f-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-03T06:06:22.000Z"
+                        },
+                        {
+                          "amount": "1.00",
+                          "cutomer_email": null,
+                          "cutomer_name": "John Doe",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
+                          "invoice_url": null,
+                          "net_amount": 1,
+                          "other_details": {
+                            "authcode": "3S9YxBiyi",
+                            "cardType": "VISA",
+                            "lastFourDigits": "0043"
+                          },
+                          "paymentTransactionId": "q-2hK73U6XLaI3Z2WuD1DtVTlu58I",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "378700eb-20da-11ef-af4e-0ef0812e6179",
+                          "transaction_date": "2024-06-02T12:18:27.000Z"
                         }
                       ],
-                      "message": "Transactions fetched successfully",
-                      "result": true
+                      "message": "Merchant's Transactions",
+                      "result": true,
+                      "total": 49
                     }
                   }
                 }
@@ -1397,7 +2039,7 @@
         ]
       }
     },
-    "/merchant/transactions/{transaction_id}": {
+    "/merchant/transactions/{transactiondID}": {
       "get": {
         "tags": [
           "Transactions"
@@ -1424,25 +2066,25 @@
               "Content-Length": {
                 "schema": {
                   "type": "string",
-                  "example": "1075"
+                  "example": "528"
                 }
               },
               "Date": {
                 "schema": {
                   "type": "string",
-                  "example": "Thu, 18 Apr 2024 16:23:32 GMT"
+                  "example": "Wed, 19 Jun 2024 15:10:35 GMT"
                 }
               },
               "ETag": {
                 "schema": {
                   "type": "string",
-                  "example": "W/\"433-6VLMvg6daS9N6IXyKLU0yetspLo\""
+                  "example": "W/\"210-6cXgOCFCrI+pnwZogOHsrlzM93k\""
                 }
               },
-              "Server": {
+              "Keep-Alive": {
                 "schema": {
                   "type": "string",
-                  "example": "Apache/2.4.57 (Red Hat Enterprise Linux) OpenSSL/3.0.7"
+                  "example": "timeout=5"
                 }
               },
               "X-Powered-By": {
@@ -1463,8 +2105,8 @@
                         "type": "object",
                         "properties": {
                           "amount": {
-                            "type": "number",
-                            "example": 2
+                            "type": "string",
+                            "example": "3000.00"
                           },
                           "cutomer_email": {
                             "nullable": true,
@@ -1472,15 +2114,15 @@
                           },
                           "cutomer_name": {
                             "type": "string",
-                            "example": "ANDREW RICE"
+                            "example": "Samuel Logan"
                           },
                           "discount_percentage": {
-                            "type": "number",
-                            "example": 0
+                            "type": "string",
+                            "example": "0.0000000"
                           },
                           "fee_percentage": {
-                            "type": "number",
-                            "example": 0
+                            "type": "string",
+                            "example": "0.0000000"
                           },
                           "invoice_url": {
                             "nullable": true,
@@ -1488,44 +2130,66 @@
                           },
                           "net_amount": {
                             "type": "number",
-                            "example": 2
+                            "example": 2920
                           },
                           "other_details": {
+                            "type": "object",
+                            "properties": {
+                              "authcode": {
+                                "type": "string",
+                                "example": "VDhdH5BWz"
+                              },
+                              "cardType": {
+                                "type": "string",
+                                "example": "M/C"
+                              },
+                              "lastFourDigits": {
+                                "type": "string",
+                                "example": "0060"
+                              }
+                            }
+                          },
+                          "paymentTransactionId": {
                             "type": "string",
-                            "example": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"3bCFBKB\",\"PaymentMethodId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionHistoryId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionId\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"referenceNumber\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"NetAmt\":200,\"GrossAmt\":200,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}"
+                            "example": "q-2f8VTmTD4mAaQJ4w6iOawjM6EMs"
                           },
                           "tax_percentage": {
-                            "type": "number",
-                            "example": 0
+                            "type": "string",
+                            "example": "0.0000000"
                           },
                           "tipAmount": {
-                            "type": "number",
-                            "example": 0
+                            "type": "string",
+                            "example": "0.00"
                           },
                           "transactionId": {
                             "type": "string",
-                            "example": "q-2fHPNm8OtIXr4mXN1EaO7MbiICx"
+                            "example": "f0478a5f-fb1f-11ee-b78a-02fabd890500"
                           },
                           "transaction_date": {
                             "type": "string",
-                            "example": "2024-04-18T11:42:16.000Z"
+                            "example": "2024-04-15T12:01:48.000Z"
                           }
                         }
                       },
                       "example": [
                         {
-                          "amount": 2,
+                          "amount": "3000.00",
                           "cutomer_email": null,
-                          "cutomer_name": "ANDREW RICE",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "Samuel Logan",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 2,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"3bCFBKB\",\"PaymentMethodId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionHistoryId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionId\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"referenceNumber\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"NetAmt\":200,\"GrossAmt\":200,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2fHPNm8OtIXr4mXN1EaO7MbiICx",
-                          "transaction_date": "2024-04-18T11:42:16.000Z"
+                          "net_amount": 2920,
+                          "other_details": {
+                            "authcode": "VDhdH5BWz",
+                            "cardType": "M/C",
+                            "lastFourDigits": "0060"
+                          },
+                          "paymentTransactionId": "q-2f8VTmTD4mAaQJ4w6iOawjM6EMs",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "f0478a5f-fb1f-11ee-b78a-02fabd890500",
+                          "transaction_date": "2024-04-15T12:01:48.000Z"
                         }
                       ]
                     },
@@ -1544,18 +2208,23 @@
                     "value": {
                       "data": [
                         {
-                          "amount": 2,
+                          "amount": "3000.00",
                           "cutomer_email": null,
-                          "cutomer_name": "ANDREW RICE",
-                          "discount_percentage": 0,
-                          "fee_percentage": 0,
+                          "cutomer_name": "Samuel Logan",
+                          "discount_percentage": "0.0000000",
+                          "fee_percentage": "0.0000000",
                           "invoice_url": null,
-                          "net_amount": 2,
-                          "other_details": "{\"payment_gateway\":\"INFINICEPT\",\"authcode\":\"3bCFBKB\",\"PaymentMethodId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionHistoryId\":\"DC4:AACA_RtF3f-Y653rSjFRNjjd2WxpOWh_SnsH2wKGYnOWUGiYHg0hs_5srQBh7_nMHdrHEsUYUaiSU-OrFELD0Ok_ItdfBTuagbGsib-sTfWbuz7fg7fSj1YL0btYOi_VNzj5sGQRZqT4APqpTqbFVHpx\",\"TransactionId\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"referenceNumber\":\"q-2fHPNm8OtIXr4mXN1EaO7MbiICx\",\"NetAmt\":200,\"GrossAmt\":200,\"PerTransFee\":0,\"Rate\":0,\"GrossAmtLessNetAmt\":0,\"lastFourDigits\":\"0060\",\"cardType\":\"M/C\",\"BIN\":\"\",\"applicationLabel\":\"Credit-Sale\"}",
-                          "tax_percentage": 0,
-                          "tipAmount": 0,
-                          "transactionId": "q-2fHPNm8OtIXr4mXN1EaO7MbiICx",
-                          "transaction_date": "2024-04-18T11:42:16.000Z"
+                          "net_amount": 2920,
+                          "other_details": {
+                            "authcode": "VDhdH5BWz",
+                            "cardType": "M/C",
+                            "lastFourDigits": "0060"
+                          },
+                          "paymentTransactionId": "q-2f8VTmTD4mAaQJ4w6iOawjM6EMs",
+                          "tax_percentage": "0.0000000",
+                          "tipAmount": "0.00",
+                          "transactionId": "f0478a5f-fb1f-11ee-b78a-02fabd890500",
+                          "transaction_date": "2024-04-15T12:01:48.000Z"
                         }
                       ],
                       "message": "Transactions fetched successfully",
@@ -1575,7 +2244,7 @@
       },
       "parameters": [
         {
-          "name": "transaction_id",
+          "name": "transactiondID",
           "in": "path",
           "required": true,
           "schema": {
