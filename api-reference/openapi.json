@@ -2047,6 +2047,17 @@
         "summary": "Get Transaction",
         "description": "Get Transaction",
         "operationId": "getTransaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Get Transaction": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Get Transaction",
@@ -2535,6 +2546,24 @@
         "operationId": "getCustomer",
         "requestBody": {
           "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "merchant_key": {
+                    "type": "string",
+                    "example": "{{merchant_key}}"
+                  }
+                }
+              },
+              "examples": {
+                "Get Customer": {
+                  "value": {
+                    "merchant_key": "{{merchant_key}}"
+                  }
+                }
+              }
+            },
             "text/plain": {
               "examples": {
                 "Get Customer": {
@@ -2981,7 +3010,7 @@
         },
         "responses": {
           "200": {
-            "description": "Request Card-Drew",
+            "description": "Request Card",
             "headers": {
               "Access-Control-Allow-Origin": {
                 "schema": {
@@ -3042,7 +3071,7 @@
                   }
                 },
                 "examples": {
-                  "Request Card-Drew": {
+                  "Request Card": {
                     "value": {
                       "message": "Request sent successfully",
                       "result": true
