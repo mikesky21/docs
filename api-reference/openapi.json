@@ -2039,7 +2039,7 @@
         ]
       }
     },
-    "/merchant/transactions/{customerId}": {
+    "/merchant/transactions/{transactionId}": {
       "get": {
         "tags": [
           "Transactions"
@@ -2244,7 +2244,7 @@
       },
       "parameters": [
         {
-          "name": "customerId",
+          "name": "transactionId",
           "in": "path",
           "required": true,
           "schema": {
