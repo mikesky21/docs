@@ -55,9 +55,28 @@
     {
       "group": "Payment Collection Methods",
       "pages": [
-        "api-reference/payment-collection-methods/create-link",
         "api-reference/payment-collection-methods/payment-request",
-        "api-reference/payment-collection-methods/payment-link"
+        "api-reference/payment-collection-methods/payment-request-customer",
+        "api-reference/payment-collection-methods/create-payment-link",
+        "api-reference/payment-collection-methods/qr-payment-link"
+      ]
+    },
+    {
+      "group": "Preauthorizations",
+      "pages": [
+        "api-reference/preauthorizations/pre-authorization-with-token",
+        "api-reference/preauthorizations/increment-pre-authorization",
+        "api-reference/preauthorizations/capture-pre-authorization"
+      ]
+    },
+    {
+      "group": "Customers",
+      "pages": [
+        "api-reference/customers/charge-customer",
+        "api-reference/customers/create-customer",
+        "api-reference/customers/get-customer",
+        "api-reference/customers/get-customers",
+        "api-reference/customers/request-card"
       ]
     },
     {
@@ -67,16 +86,6 @@
         "api-reference/transactions/get-transaction",
         "api-reference/transactions/return-sale",
         "api-reference/transactions/void-sale"
-      ]
-    },
-    {
-      "group": "Customers",
-      "pages": [
-        "api-reference/customers/create-customer",
-        "api-reference/customers/get-customer",
-        "api-reference/customers/get-customers",
-        "api-reference/customers/request-card",
-        "api-reference/customers/charge-customer"
       ]
     }
   ],
