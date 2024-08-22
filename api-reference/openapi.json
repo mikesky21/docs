@@ -734,7 +734,7 @@
                         },
                         "qr_code_link": {
                           "type": "string",
-                          "example": "http://localhost:8081/authcheck-paymentlink/h9jfippu2jn"
+                          "example": "https://testapi.fractalpay.com/authcheck-paymentlink/h9jfippu2jn"
                         },
                         "sales_id": {
                           "type": "string",
@@ -753,7 +753,7 @@
                     "value": {
                       "data": {
                         "order_id": "5465",
-                        "qr_code_link": "http://localhost:8081/authcheck-paymentlink/h9jfippu2jn",
+                        "qr_code_link": "https://testapi.fractalpay.com/authcheck-paymentlink/h9jfippu2jn",
                         "sales_id": "c9d48736-edbf-11ee-b78a-02fabd890500"
                       },
                       "message": "Text request has been sent"
@@ -993,7 +993,7 @@
                         },
                         "qr_code_link": {
                           "type": "string",
-                          "example": "http://localhost:8081/authcheck-paymentlink/842gd6vkh8g"
+                          "example": "https://testapi.fractalpay.com/authcheck-paymentlink/842gd6vkh8g"
                         },
                         "sales_id": {
                           "type": "string",
@@ -1012,7 +1012,7 @@
                     "value": {
                       "data": {
                         "order_id": "512345",
-                        "qr_code_link": "http://localhost:8081/authcheck-paymentlink/842gd6vkh8g",
+                        "qr_code_link": "https://testapi.fractalpay.com/authcheck-paymentlink/842gd6vkh8g",
                         "sales_id": "c9d4899e-edbf-11ee-b78a-02fabd890500"
                       },
                       "message": "Text request has been sent"
@@ -1141,7 +1141,7 @@
                         },
                         "payment_link": {
                           "type": "string",
-                          "example": "http://localhost:8081/authcheck-paymentlink/u6j3garacoj"
+                          "example": "https://testapi.fractalpay.com/authcheck-paymentlink/u6j3garacoj"
                         },
                         "sales_id": {
                           "type": "string",
@@ -1164,7 +1164,7 @@
                     "value": {
                       "data": {
                         "order_id": "22111fdz",
-                        "payment_link": "http://localhost:8081/authcheck-paymentlink/u6j3garacoj",
+                        "payment_link": "https://testapi.fractalpay.com/authcheck-paymentlink/u6j3garacoj",
                         "sales_id": "c2e0adab-55b5-11ef-af4e-0ef0812e6179"
                       },
                       "message": "Quick Pay Order created successfully.",
@@ -1284,7 +1284,7 @@
                         },
                         "qr_code_link": {
                           "type": "string",
-                          "example": "http://localhost:8081/authcheck-paymentlink/pqy8mwj4tjl"
+                          "example": "https://testapi.fractalpay.com/authcheck-paymentlink/pqy8mwj4tjl"
                         },
                         "sales_id": {
                           "type": "string",
@@ -1303,7 +1303,7 @@
                     "value": {
                       "data": {
                         "order_id": "24400",
-                        "qr_code_link": "http://localhost:8081/authcheck-paymentlink/pqy8mwj4tjl",
+                        "qr_code_link": "https://testapi.fractalpay.com/authcheck-paymentlink/pqy8mwj4tjl",
                         "sales_id": "c9d48e46-edbf-11ee-b78a-02fabd890500"
                       },
                       "message": "QR code URL has been created"
@@ -2152,7 +2152,7 @@
                       "properties": {
                         "customer_email": {
                           "type": "string",
-                          "example": "mike@skysystemz.com"
+                          "example": "johndoe@fractalpay.com"
                         },
                         "customer_id": {
                           "type": "string",
@@ -2160,7 +2160,7 @@
                         },
                         "customer_phone": {
                           "type": "string",
-                          "example": "8594685687"
+                          "example": "8554147444"
                         }
                       }
                     },
@@ -2178,9 +2178,9 @@
                   "Get Customer": {
                     "value": {
                       "data": {
-                        "customer_email": "mike@skysystemz.com",
+                        "customer_email": "johndoe@fractalpay.com",
                         "customer_id": "0c5f67e2-42c5-11ef-af4e-0ef0812e6179",
-                        "customer_phone": "8594685687"
+                        "customer_phone": "8554147444"
                       },
                       "message": "Customer details",
                       "result": true
